@@ -1,0 +1,6 @@
+backend/__pycache__/config.cpython-39.pyc
+backend/app/__pycache__/__init__.cpython-39.pyc
+backend/app/__pycache__/routes.cpython-39.pyc
+backend/app/models/__pycache__/__init__.cpython-39.pyc
+backend/app/models/__pycache__/usuario.cpython-39.pyc
+backend/venv
