@@ -1,4 +1,5 @@
 from app import db
+import bcrypt
 
 class Usuario(db.Model):
 
@@ -8,12 +9,18 @@ class Usuario(db.Model):
     cpf = db.Column(db.String(120), index=True, unique=True, nullable=False)
     first_name = db.Column(db.String(64))
     last_name = db.Column(db.String(64))
+    password_hash = db.Column(db.String(128), nullable=False)
+
+    def set_password(self, password):
+        self.password_hash = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+
+    def check_password(self, password):
+        return bcrypt.checkpw(password.encode('utf-8'), self.password_hash)
 
     def __repr__(self):
         return f'<User {self.username}>'
-    # fornece uma representação oficial do objeto para depuração.
 
     def __str__(self):
-        return (f'User(id={self.id}, username={self.username}, email={self.email}, '
+        return (f'User(id={self.id}, username={self.username}, email={self.email}, cpf={self.cpf} '
                 f'first_name={self.first_name}, last_name={self.last_name})')
         
