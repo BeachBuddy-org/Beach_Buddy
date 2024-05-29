@@ -1,46 +1,44 @@
-from flask import current_app as app, render_template, request, redirect, url_for
-from app.models.usuario import Usuario
+from flask import current_app as app, request, jsonify, render_template
 from app import db
+from app.models.usuario import Usuario
+from app.models.aluno import Aluno
+from app.models.gerente import Gerente
+from app.models.treinador import Treinador
+
 
 
 @app.route('/')
 def home():
-    # Adicionando um usuário para demonstração
-    # user = Usuario(username='anaclara', email='anaClara@example.com', first_name='Ana', last_name='Galvao', cpf='18721871')
-    # db.session.add(user)
-    # db.session.commit()
-    
-    # Consulta um usuário pelo username
-    username = request.args.get('username', 'anaclara')
-    user = Usuario.query.filter_by(username=username).first()
-    
-    if user:
-        user_details = str(user)
-    else:
-        user_details = "User not found."
-    
-    return render_template('index.html', user_details=user_details)
+    return render_template('home.html')
 
-
-@app.route('/register', methods=['GET', 'POST'])
+@app.route('/register')
 def register():
-    if request.method == 'POST':
-        username = request.form['username']
-        email = request.form['email']
-        cpf = request.form['cpf']
-        password = request.form['password']
-        first_name = request.form.get('first_name', '')
-        last_name = request.form.get('last_name', '')
-
-        # Verificar se o usuário já existe
-        existing_user = Usuario.query.filter_by(username=username).first()
-        if existing_user is None:
-            user = Usuario(username=username, email=email,cpf=cpf, first_name=first_name, last_name=last_name)
-            user.set_password(password)
-            db.session.add(user)
-            db.session.commit()
-            return redirect(url_for('home'))
-        else:
-            return 'Username already exists. Please choose a different username.', 400
-
     return render_template('register.html')
+
+
+@app.route('/api/register', methods=['POST'])
+def register_user():
+    data = request.json
+    user_type = data.get('type')
+    username = data.get('username')
+    email = data.get('email')
+    cpf = data.get('cpf')
+    password = data.get('password')
+    first_name = data.get('first_name', '')
+    last_name = data.get('last_name', '')
+
+    if user_type == 'aluno':
+        user = Aluno(username=username, email=email,cpf =cpf, first_name=first_name, last_name=last_name)
+    elif user_type == 'gerente':
+        user = Gerente(username=username, email=email,cpf =cpf, first_name=first_name, last_name=last_name)
+    elif user_type == 'treinador':
+       
+        user = Treinador(username=username, email=email,cpf =cpf, first_name=first_name, last_name=last_name)
+    else:
+        return jsonify({'error': 'Invalid user type'}), 400
+
+    user.set_password(password)
+    db.session.add(user)
+    db.session.commit()
+
+    return jsonify({'message': 'User registered successfully'}), 201

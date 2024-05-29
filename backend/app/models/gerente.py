@@ -2,7 +2,7 @@ from app import db
 from .usuario import Usuario
 from .gerente_ct_association import gerente_ct_association
 
-class gerente(Usuario):
+class Gerente(Usuario):
     __tablename__='gerente'
     id = db.Column(db.Integer, db.ForeignKey('usuario.id'), primary_key=True)
 

@@ -1,25 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Register</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        color: #333;
+      }
+      form {
+        margin-bottom: 20px;
+      }
+      input,
+      select {
+        margin-bottom: 10px;
+        display: block;
+      }
+      .result {
+        margin-top: 20px;
+        color: green;
+      }
+      .error {
+        margin-top: 20px;
+        color: red;
+      }
+    </style>
   </head>
   <body>
-    <h1>Register</h1>
-    <form method="POST">
-      <label for="username">Username:</label><br>
-      <input type="text" id="username" name="username" required><br>
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email" required><br>
-      <label for="cpf">CPF:</label><br>
-      <input type="number" id="cpf" name="cpf" required><br>
-      <label for="password">Password:</label><br>
-      <input type="password" id="password" name="password" required><br>
-      <label for="first_name">First Name:</label><br>
-      <input type="text" id="first_name" name="first_name"><br>
-      <label for="last_name">Last Name:</label><br>
-      <input type="text" id="last_name" name="last_name"><br>
-      <input type="submit" value="Register">
+    <h1>Register User</h1>
+    <form id="registerForm">
+      <label for="type">User Type:</label>
+      <select id="type" name="type" required>
+        <option value="aluno">Aluno</option>
+        <option value="gerente">Gerente</option>
+        <option value="treinador">Treinador</option>
+      </select>
+
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="cpf">CPF:</label>
+      <input type="cpf" id="cpf" name="cpf" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+
+      <label for="first_name">First Name:</label>
+      <input type="text" id="first_name" name="first_name" />
+
+      <label for="last_name">Last Name:</label>
+      <input type="text" id="last_name" name="last_name" />
+
+      <input type="submit" value="Register" />
     </form>
+
+    <div class="result" id="result"></div>
+    <div class="error" id="error"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
   </body>
 </html>
