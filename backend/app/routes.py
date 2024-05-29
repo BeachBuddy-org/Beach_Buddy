@@ -4,6 +4,8 @@ from app.models.usuario import Usuario
 from app.models.aluno import Aluno
 from app.models.gerente import Gerente
 from app.models.treinador import Treinador
+from app.models.ct import CT
+from app.models.gerente_ct_association import gerente_ct_association
 
 
 
@@ -42,3 +44,29 @@ def register_user():
     db.session.commit()
 
     return jsonify({'message': 'User registered successfully'}), 201
+
+@app.route('/api/register_ct', methods=['POST'])
+def register_ct():
+    data = request.json
+    name = data.get('name')
+    cnpj = data.get('cnpj')
+    address = data.get('address')
+    gerente_id = data.get('gerente_id')
+    # Verificar se o gerente existe
+    gerente = Gerente.query.get(gerente_id)
+    if not gerente:
+        return jsonify({'error': 'Gerente not found'}), 404
+
+    # Criar uma nova instância de CT
+    new_ct = CT(name=name, cnpj=cnpj, address=address)
+
+    # Adicionar o novo CT ao banco de dados
+    db.session.add(new_ct)
+    db.session.commit()
+
+    # Adicionar a associação do gerente com o novo CT
+    gerente.cts.append(new_ct)
+    db.session.commit()
+
+    return jsonify({'message': 'CT registered successfully'}), 201
+    
