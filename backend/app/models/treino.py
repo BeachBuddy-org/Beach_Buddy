@@ -1,4 +1,5 @@
 from app import db
+from .presenca import Presenca
 
 class Treino(db.Model):
     __tablename__ = 'treino'
@@ -8,6 +9,7 @@ class Treino(db.Model):
     ct_id = db.Column(db.Integer, db.ForeignKey('ct.id'), nullable=False)
 
     ct = db.relationship('CT', back_populates='treinos')
+    presencas = db.relationship('Presenca', back_populates='treino', cascade='all, delete-orphan')
 
     def __repr__(self):
         return f'<Treino {self.name}>'
