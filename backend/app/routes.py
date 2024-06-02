@@ -7,6 +7,7 @@ from app.models.treinador import Treinador
 from app.models.ct import CT
 from app.models.gerente_ct_association import gerente_ct_association
 from app.models.presenca import Presenca
+from app.models.treino import Treino
 
 
 
@@ -121,4 +122,23 @@ def visualizar_presencas():
             })
 
     return jsonify(resultados)
-    
+
+@app.route('/horarios_disponiveis', methods=['GET'])
+def horarios_disponiveis():
+    ct_id = request.args.get('ct_id')
+    if not ct_id:
+        return jsonify({'error': 'CT ID é necessário'}), 400
+
+    treinos = Treino.query.filter_by(ct_id=ct_id).all()
+    if not treinos:
+        return jsonify({'error': 'Nenhum treino encontrado para este CT'}), 404
+
+    resultados = []
+    for treino in treinos:
+        resultados.append({
+            'treino_id': treino.id,
+            'name': treino.name,
+            'date': treino.date.isoformat()
+        })
+
+    return jsonify(resultados)
