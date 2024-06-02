@@ -98,3 +98,27 @@ def cancelar_presenca():
     else:
         return jsonify({'error': 'Presença não encontrada!'}), 404
     
+@app.route('/visualizar_presencas', methods=['GET'])
+def visualizar_presencas():
+    treino_id = request.args.get('treino_id')
+    if not treino_id:
+        return jsonify({'error': 'Treino ID é necessário'}), 400
+
+    presencas = Presenca.query.filter_by(treino_id=treino_id).all()
+    if not presencas:
+        return jsonify({'error': 'Nenhuma presença encontrada para este treino'}), 404
+
+    resultados = []
+    for presenca in presencas:
+        aluno = Aluno.query.get(presenca.aluno_id)
+        if aluno:
+            resultados.append({
+                'aluno_id': aluno.id,
+                'username': aluno.username,
+                'email': aluno.email,
+                'first_name': aluno.first_name,
+                'last_name': aluno.last_name
+            })
+
+    return jsonify(resultados)
+    
