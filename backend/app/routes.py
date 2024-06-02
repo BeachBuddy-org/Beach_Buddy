@@ -84,4 +84,17 @@ def confirmar_presenca():
         presenca.presente = True
     db.session.commit()
     return jsonify({'message': 'Presença confirmada!'})
+
+@app.route('/cancelar_presenca', methods=['POST'])
+def cancelar_presenca():
+    data = request.get_json()
+    aluno_id = data.get('aluno_id')
+    treino_id = data.get('treino_id')
+    presenca = Presenca.query.filter_by(aluno_id=aluno_id, treino_id=treino_id).first()
+    if presenca:
+        db.session.delete(presenca)
+        db.session.commit()
+        return jsonify({'message': 'Presença cancelada!'})
+    else:
+        return jsonify({'error': 'Presença não encontrada!'}), 404
     
