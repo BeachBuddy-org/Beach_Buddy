@@ -6,6 +6,7 @@ from app.models.gerente import Gerente
 from app.models.treinador import Treinador
 from app.models.ct import CT
 from app.models.gerente_ct_association import gerente_ct_association
+from app.models.presenca import Presenca
 
 
 
@@ -69,4 +70,18 @@ def register_ct():
     db.session.commit()
 
     return jsonify({'message': 'CT registered successfully'}), 201
+
+@app.route('/confirmar_presenca', methods=['POST'])
+def confirmar_presenca():
+    data = request.get_json()
+    aluno_id = data.get('aluno_id')
+    treino_id = data.get('treino_id')
+    presenca = Presenca.query.filter_by(aluno_id=aluno_id, treino_id=treino_id).first()
+    if not presenca:
+        presenca = Presenca(aluno_id=aluno_id, treino_id=treino_id, presente=True)
+        db.session.add(presenca)
+    else:
+        presenca.presente = True
+    db.session.commit()
+    return jsonify({'message': 'Presença confirmada!'})
     
