@@ -1,13 +1,12 @@
-// src/components/Home.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div>
+    <div className="container">
       <h1>Bem-vindo ao Beach Buddy</h1>
-      <Link to="/register-student"><button>Cadastrar Aluno</button></Link>
-      <Link to="/register-ct"><button>Cadastrar CT</button></Link>
+      <Link to="/register-student" className="button-link">Cadastrar Aluno</Link>
+      <Link to="/register-ct" className="button-link">Cadastrar CT</Link>
     </div>
   );
 }
