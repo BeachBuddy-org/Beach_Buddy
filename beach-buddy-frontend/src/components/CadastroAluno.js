@@ -22,7 +22,7 @@ const CadastroAluno = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Cadastrar Aluno</h2>
       <form onSubmit={handleSubmit}>
         <input type="text" name="username" placeholder="Nome de Usuário" onChange={handleChange} />

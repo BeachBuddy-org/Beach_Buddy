@@ -39,7 +39,7 @@ const CadastroCT = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Cadastrar Gerente</h2>
       <form onSubmit={handleGerenteSubmit}>
         <input type="text" name="username" placeholder="Nome de Usuário" onChange={handleGerenteChange} />
