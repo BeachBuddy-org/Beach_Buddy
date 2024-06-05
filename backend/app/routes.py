@@ -19,6 +19,10 @@ def home():
 def register():
     return render_template('register.html')
 
+@app.route('/registerCT')
+def register_ct_form():
+    return render_template('registerCT.html')
+
 
 @app.route('/api/register', methods=['POST'])
 def register_user():
