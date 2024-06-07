@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles.css'; // Certifique-se de que o caminho está correto
 
 const CadastroAluno = () => {
   const [aluno, setAluno] = useState({
@@ -17,8 +18,25 @@ const CadastroAluno = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Enviar dados para o backend
-    console.log(aluno);
+    fetch('http://127.0.0.1:5000/api/register', {  // Certifique-se de que esta URL está correta
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ ...aluno, type: 'aluno' })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message) {
+            alert("Aluno cadastrado com sucesso!");
+        } else {
+            alert("Erro ao cadastrar aluno, tente novamente.");
+        }
+    })
+    .catch(error => {
+        console.error("Erro ao cadastrar aluno:", error);
+        alert("Erro ao cadastrar aluno.");
+    });
   };
 
   return (

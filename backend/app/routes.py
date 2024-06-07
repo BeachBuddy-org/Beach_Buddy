@@ -9,8 +9,6 @@ from app.models.gerente_ct_association import gerente_ct_association
 from app.models.presenca import Presenca
 from app.models.treino import Treino
 
-
-
 @app.route('/')
 def home():
     return render_template('home.html')
@@ -22,7 +20,6 @@ def register():
 @app.route('/registerCT')
 def register_ct_form():
     return render_template('registerCT.html')
-
 
 @app.route('/api/register', methods=['POST'])
 def register_user():
@@ -36,12 +33,11 @@ def register_user():
     last_name = data.get('last_name', '')
 
     if user_type == 'aluno':
-        user = Aluno(username=username, email=email,cpf =cpf, first_name=first_name, last_name=last_name)
+        user = Aluno(username=username, email=email, cpf=cpf, first_name=first_name, last_name=last_name)
     elif user_type == 'gerente':
-        user = Gerente(username=username, email=email,cpf =cpf, first_name=first_name, last_name=last_name)
+        user = Gerente(username=username, email=email, cpf=cpf, first_name=first_name, last_name=last_name)
     elif user_type == 'treinador':
-       
-        user = Treinador(username=username, email=email,cpf =cpf, first_name=first_name, last_name=last_name)
+        user = Treinador(username=username, email=email, cpf=cpf, first_name=first_name, last_name=last_name)
     else:
         return jsonify({'error': 'Invalid user type'}), 400
 
@@ -58,19 +54,16 @@ def register_ct():
     cnpj = data.get('cnpj')
     address = data.get('address')
     gerente_id = data.get('gerente_id')
-    # Verificar se o gerente existe
+
     gerente = Gerente.query.get(gerente_id)
     if not gerente:
         return jsonify({'error': 'Gerente not found'}), 404
 
-    # Criar uma nova instância de CT
     new_ct = CT(name=name, cnpj=cnpj, address=address)
 
-    # Adicionar o novo CT ao banco de dados
     db.session.add(new_ct)
     db.session.commit()
 
-    # Adicionar a associação do gerente com o novo CT
     gerente.cts.append(new_ct)
     db.session.commit()
 
@@ -102,7 +95,7 @@ def cancelar_presenca():
         return jsonify({'message': 'Presença cancelada!'})
     else:
         return jsonify({'error': 'Presença não encontrada!'}), 404
-    
+
 @app.route('/visualizar_presencas', methods=['GET'])
 def visualizar_presencas():
     treino_id = request.args.get('treino_id')
