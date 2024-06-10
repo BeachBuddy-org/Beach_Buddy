@@ -6,7 +6,6 @@ from app.models.gerente import Gerente
 from app.models.treinador import Treinador
 from app.models.ct import CT
 from app.models.gerente_ct_association import gerente_ct_association
-from app.models.presenca import Presenca
 from app.models.treino import Treino
 
 @app.route('/')
@@ -69,56 +68,29 @@ def register_ct():
 
     return jsonify({'message': 'CT registered successfully'}), 201
 
-@app.route('/confirmar_presenca', methods=['POST'])
-def confirmar_presenca():
-    data = request.get_json()
-    aluno_id = data.get('aluno_id')
-    treino_id = data.get('treino_id')
-    presenca = Presenca.query.filter_by(aluno_id=aluno_id, treino_id=treino_id).first()
-    if not presenca:
-        presenca = Presenca(aluno_id=aluno_id, treino_id=treino_id, presente=True)
-        db.session.add(presenca)
-    else:
-        presenca.presente = True
+@app.route('/api/create_treino', methods = ['POST'])
+def create_treino():
+    data = request.json
+    date = data.get('date')
+    horario = data.get('horario')
+    ct_id = data.get('ct_id')
+    nivel = data.get('nivel')
+    recorrente = data.get('recorrencia')
+
+    ct = CT.query.get(ct_id)
+    if not ct:
+        return jsonify({'error': 'CT not found'}), 404
+
+    
+    new_treino = Treino(date=date, horario=horario, ct_id=ct_id, nivel=nivel, recorrente=recorrente)
+
+    db.session.add(new_treino)
     db.session.commit()
-    return jsonify({'message': 'Presença confirmada!'})
 
-@app.route('/cancelar_presenca', methods=['POST'])
-def cancelar_presenca():
-    data = request.get_json()
-    aluno_id = data.get('aluno_id')
-    treino_id = data.get('treino_id')
-    presenca = Presenca.query.filter_by(aluno_id=aluno_id, treino_id=treino_id).first()
-    if presenca:
-        db.session.delete(presenca)
-        db.session.commit()
-        return jsonify({'message': 'Presença cancelada!'})
-    else:
-        return jsonify({'error': 'Presença não encontrada!'}), 404
+    ct.treinos.append(new_treino)
+    db.session.commit()
 
-@app.route('/visualizar_presencas', methods=['GET'])
-def visualizar_presencas():
-    treino_id = request.args.get('treino_id')
-    if not treino_id:
-        return jsonify({'error': 'Treino ID é necessário'}), 400
-
-    presencas = Presenca.query.filter_by(treino_id=treino_id).all()
-    if not presencas:
-        return jsonify({'error': 'Nenhuma presença encontrada para este treino'}), 404
-
-    resultados = []
-    for presenca in presencas:
-        aluno = Aluno.query.get(presenca.aluno_id)
-        if aluno:
-            resultados.append({
-                'aluno_id': aluno.id,
-                'username': aluno.username,
-                'email': aluno.email,
-                'first_name': aluno.first_name,
-                'last_name': aluno.last_name
-            })
-
-    return jsonify(resultados)
+    return jsonify({'message': 'Treino criado com sucesso'})
 
 @app.route('/horarios_disponiveis', methods=['GET'])
 def horarios_disponiveis():

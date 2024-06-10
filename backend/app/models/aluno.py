@@ -1,14 +1,12 @@
 from app import db
 from .usuario import Usuario
 from .aluno_ct_association import aluno_ct_association
-from .presenca import Presenca
 
 class Aluno(Usuario):
     __tablename__ = 'aluno'
     id = db.Column(db.Integer, db.ForeignKey('usuario.id'), primary_key=True)
 
     cts = db.relationship('CT', secondary=aluno_ct_association, back_populates='alunos')
-    presencas = db.relationship('Presenca', back_populates='aluno', cascade='all, delete-orphan') 
 
     __mapper_args__ = {
         'polymorphic_identity': 'aluno',
