@@ -1,0 +1,186 @@
+.tela-inicial {
+  background-color: #ffffff;
+  height: 932px;
+  overflow: hidden;
+  position: relative;
+  width: 430px;
+}
+
+.tela-inicial .headline {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: var(--variable-collection-spacing-s);
+  height: 99px;
+  left: 36px;
+  position: absolute;
+  top: 100px;
+  width: 164px;
+}
+
+.tela-inicial .text-wrapper {
+  align-self: stretch;
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+}
+
+.tela-inicial .input {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 264px;
+  left: 30px;
+  position: absolute;
+  top: 321px;
+  width: 339px;
+}
+
+.tela-inicial .div {
+  align-self: stretch;
+  color: #000000;
+  font-family: var(--small-text-font-family);
+  font-size: var(--small-text-font-size);
+  font-style: var(--small-text-font-style);
+  font-weight: var(--small-text-font-weight);
+  letter-spacing: var(--small-text-letter-spacing);
+  line-height: var(--small-text-line-height);
+  margin-top: -1px;
+  position: relative;
+}
+
+.tela-inicial .field {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #e0e0e0;
+  border-radius: 8px;
+  box-shadow: var(--button-shadow);
+  display: flex;
+  gap: 8px;
+  height: 232px;
+  padding: 12px 16px;
+  position: relative;
+  width: 100%;
+}
+
+.tela-inicial .checkbox-group-instance {
+  height: 182px !important;
+  margin-right: -4px !important;
+  width: 311px !important;
+}
+
+.tela-inicial .design-component-instance-node {
+  height: 1px !important;
+  left: -2055px !important;
+  top: -320px !important;
+  width: 1px !important;
+}
+
+.tela-inicial .checkbox-group-2 {
+  flex: 0 0 auto !important;
+  width: 180px !important;
+}
+
+.tela-inicial .checkbox-group-3 {
+  height: 1px !important;
+  left: -2055px !important;
+  top: -360px !important;
+  width: 1px !important;
+}
+
+.tela-inicial .checkbox-group-4 {
+  flex: 0 0 auto !important;
+  margin-bottom: -8px !important;
+  width: 180px !important;
+}
+
+.tela-inicial .text-wrapper-2 {
+  color: #000000;
+  font-family: var(--body-text-font-family);
+  font-size: var(--body-text-font-size);
+  font-style: var(--body-text-font-style);
+  font-weight: var(--body-text-font-weight);
+  height: 30px;
+  left: 16px;
+  letter-spacing: var(--body-text-letter-spacing);
+  line-height: var(--body-text-line-height);
+  position: absolute;
+  top: 18px;
+  white-space: nowrap;
+}
+
+.tela-inicial .items {
+  align-items: center;
+  display: inline-flex;
+  gap: var(--variable-collection-spacing-m);
+  justify-content: flex-end;
+  left: -136px;
+  position: absolute;
+  top: -120px;
+}
+
+.tela-inicial .text-wrapper-3 {
+  color: #000000;
+  font-family: var(--body-text-font-family);
+  font-size: var(--body-text-font-size);
+  font-style: var(--body-text-font-style);
+  font-weight: var(--body-text-font-weight);
+  letter-spacing: var(--body-text-letter-spacing);
+  line-height: var(--body-text-line-height);
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.tela-inicial .div-wrapper {
+  align-items: center;
+  display: inline-flex;
+  gap: var(--variable-collection-spacing-m);
+  justify-content: flex-end;
+  left: 365px;
+  position: absolute;
+  top: 19px;
+}
+
+.tela-inicial .image {
+  height: 160px;
+  left: 215px;
+  object-fit: cover;
+  position: absolute;
+  top: 106px;
+  width: 169px;
+}
+
+.tela-inicial .boton {
+  background-color: var(--principal);
+  border-radius: 20px;
+  height: 45px;
+  left: 126px;
+  overflow: hidden;
+  position: absolute;
+  top: 622px;
+  width: 163px;
+}
+
+.tela-inicial .criar-treino {
+  color: #ffffff;
+  font-family: "Roboto", Helvetica;
+  font-size: 18px;
+  font-weight: 600;
+  left: 34px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 11px;
+  white-space: nowrap;
+}

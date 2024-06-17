@@ -1,0 +1,201 @@
+.tela-ps-seleo {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.tela-ps-seleo .div-4 {
+  background-color: #ffffff;
+  height: 932px;
+  overflow: hidden;
+  position: relative;
+  width: 430px;
+}
+
+.tela-ps-seleo .headline-3 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: var(--variable-collection-spacing-s);
+  height: 99px;
+  left: 36px;
+  position: absolute;
+  top: 100px;
+  width: 164px;
+}
+
+.tela-ps-seleo .text-wrapper-10 {
+  align-self: stretch;
+  color: #000000;
+  font-family: var(--title-font-family);
+  font-size: var(--title-font-size);
+  font-style: var(--title-font-style);
+  font-weight: var(--title-font-weight);
+  letter-spacing: var(--title-letter-spacing);
+  line-height: var(--title-line-height);
+  margin-top: -1px;
+  position: relative;
+}
+
+.tela-ps-seleo .text-wrapper-11 {
+  color: #000000;
+  font-family: var(--body-text-font-family);
+  font-size: var(--body-text-font-size);
+  font-style: var(--body-text-font-style);
+  font-weight: var(--body-text-font-weight);
+  height: 30px;
+  left: 16px;
+  letter-spacing: var(--body-text-letter-spacing);
+  line-height: var(--body-text-line-height);
+  position: absolute;
+  top: 18px;
+  white-space: nowrap;
+}
+
+.tela-ps-seleo .items-4 {
+  align-items: center;
+  display: inline-flex;
+  gap: var(--variable-collection-spacing-m);
+  justify-content: flex-end;
+  left: -136px;
+  position: absolute;
+  top: -120px;
+}
+
+.tela-ps-seleo .text-wrapper-12 {
+  color: #000000;
+  font-family: var(--body-text-font-family);
+  font-size: var(--body-text-font-size);
+  font-style: var(--body-text-font-style);
+  font-weight: var(--body-text-font-weight);
+  letter-spacing: var(--body-text-letter-spacing);
+  line-height: var(--body-text-line-height);
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.tela-ps-seleo .items-5 {
+  align-items: center;
+  display: inline-flex;
+  gap: var(--variable-collection-spacing-m);
+  justify-content: flex-end;
+  left: 365px;
+  position: absolute;
+  top: 19px;
+}
+
+.tela-ps-seleo .items-6 {
+  align-items: center;
+  display: inline-flex;
+  gap: var(--variable-collection-spacing-m);
+  justify-content: flex-end;
+  left: 263px;
+  position: absolute;
+  top: 19px;
+}
+
+.tela-ps-seleo .TREINOS {
+  height: 624px;
+  left: 38px;
+  overflow: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  top: 308px;
+  width: 364px;
+}
+
+.tela-ps-seleo .treino {
+  background-color: #b18efb;
+  height: 228px;
+  left: 0;
+  position: absolute;
+  top: 5px;
+  width: 363px;
+}
+
+.tela-ps-seleo .text-wrapper-13 {
+  color: #000000;
+  font-family: var(--small-text-font-family);
+  font-size: var(--small-text-font-size);
+  font-style: var(--small-text-font-style);
+  font-weight: var(--small-text-font-weight);
+  height: 57px;
+  left: 13px;
+  letter-spacing: var(--small-text-letter-spacing);
+  line-height: var(--small-text-line-height);
+  position: absolute;
+  top: -2px;
+  width: 289px;
+}
+
+.tela-ps-seleo .local-quadra {
+  color: #000000;
+  font-family: var(--small-text-font-family);
+  font-size: var(--small-text-font-size);
+  font-style: var(--small-text-font-style);
+  font-weight: var(--small-text-font-weight);
+  height: 72px;
+  left: 13px;
+  letter-spacing: var(--small-text-letter-spacing);
+  line-height: var(--small-text-line-height);
+  position: absolute;
+  top: 55px;
+  width: 284px;
+}
+
+.tela-ps-seleo .treino-2 {
+  background-color: #b18efb;
+  height: 228px;
+  left: 0;
+  position: absolute;
+  top: 283px;
+  width: 363px;
+}
+
+.tela-ps-seleo .treino-3 {
+  background-color: #b18efb;
+  height: 228px;
+  left: -5px;
+  position: absolute;
+  top: 561px;
+  width: 363px;
+}
+
+.tela-ps-seleo .overlap-group {
+  height: 265px;
+  left: -5px;
+  position: absolute;
+  top: 839px;
+  width: 363px;
+}
+
+.tela-ps-seleo .treino-4 {
+  background-color: #b18efb;
+  height: 228px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 363px;
+}
+
+.tela-ps-seleo .treino-5 {
+  background-color: #b18efb;
+  height: 228px;
+  left: 0;
+  position: absolute;
+  top: 37px;
+  width: 363px;
+}
+
+.tela-ps-seleo .image-2 {
+  height: 200px;
+  left: 215px;
+  object-fit: cover;
+  position: absolute;
+  top: 64px;
+  width: 200px;
+}

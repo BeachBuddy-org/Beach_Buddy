@@ -1,0 +1,50 @@
+.checkbox-group {
+  -webkit-backdrop-filter: blur(8px) brightness(100%);
+  align-items: flex-start;
+  backdrop-filter: blur(8px) brightness(100%);
+  background-color: var(--white-07);
+  border: 1px solid;
+  border-color: var(--white-07);
+  border-radius: 16px;
+  box-shadow: var(--elevation-blur);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 8px;
+  position: relative;
+  width: 196px;
+}
+
+.checkbox-group .item {
+  height: 1px !important;
+  left: -27px !important;
+  top: -1122px !important;
+  width: 1px !important;
+}
+
+.checkbox-group .checkbox-instance {
+  height: 1px !important;
+  left: -27px !important;
+  top: -1162px !important;
+  width: 1px !important;
+}
+
+.checkbox-group .instance-node {
+  align-self: stretch !important;
+  flex: 0 0 auto !important;
+  width: 100% !important;
+}
+
+.checkbox-group .item-2 {
+  height: 1px !important;
+  left: -27px !important;
+  top: -1042px !important;
+  width: 1px !important;
+}
+
+.checkbox-group .item-3 {
+  height: 1px !important;
+  left: -27px !important;
+  top: -1082px !important;
+  width: 1px !important;
+}

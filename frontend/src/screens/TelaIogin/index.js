@@ -1,0 +1,1 @@
+export { TelaIogin } from "./TelaIogin";

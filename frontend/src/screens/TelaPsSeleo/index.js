@@ -1,0 +1,1 @@
+export { TelaPsSeleo } from "./TelaPsSeleo";

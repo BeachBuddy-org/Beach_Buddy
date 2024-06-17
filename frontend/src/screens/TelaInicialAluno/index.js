@@ -1,0 +1,1 @@
+export { TelaInicialAluno } from "./TelaInicialAluno";

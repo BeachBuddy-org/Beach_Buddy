@@ -1,0 +1,1 @@
+export { InicialMesmo } from "./InicialMesmo";

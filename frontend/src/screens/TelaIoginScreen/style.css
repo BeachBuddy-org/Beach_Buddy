@@ -1,0 +1,78 @@
+.tela-iogin-screen {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.tela-iogin-screen .tela-iogin-2 {
+  background-color: #ffffff;
+  height: 932px;
+  overflow: hidden;
+  position: relative;
+  width: 430px;
+}
+
+.tela-iogin-screen .items-9 {
+  align-items: center;
+  display: inline-flex;
+  gap: var(--variable-collection-spacing-m);
+  justify-content: flex-end;
+  left: -136px;
+  position: absolute;
+  top: -120px;
+}
+
+.tela-iogin-screen .text-wrapper-16 {
+  color: #000000;
+  font-family: var(--body-text-font-family);
+  font-size: var(--body-text-font-size);
+  font-style: var(--body-text-font-style);
+  font-weight: var(--body-text-font-weight);
+  letter-spacing: var(--body-text-letter-spacing);
+  line-height: var(--body-text-line-height);
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.tela-iogin-screen .text-wrapper-17 {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 48px;
+  font-weight: 700;
+  left: 152px;
+  letter-spacing: -0.96px;
+  line-height: normal;
+  position: absolute;
+  top: 396px;
+  width: 192px;
+}
+
+.tela-iogin-screen .overlap-group-2 {
+  background-image: url(/public/img/image-4.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 367px;
+  left: 41px;
+  position: absolute;
+  top: 22px;
+  width: 348px;
+}
+
+.tela-iogin-screen .items-10 {
+  align-items: center;
+  display: inline-flex;
+  gap: var(--variable-collection-spacing-m);
+  justify-content: flex-end;
+  left: 263px;
+  position: relative;
+}
+
+.tela-iogin-screen .frame-instance {
+  left: 49px !important;
+  position: absolute !important;
+  top: 466px !important;
+}

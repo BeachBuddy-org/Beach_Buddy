@@ -1,0 +1,102 @@
+.frame {
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #c4c4c4;
+  border-radius: 20px;
+  height: 438px;
+  overflow: hidden;
+  position: relative;
+  width: 332px;
+}
+
+.frame .boton-2 {
+  background-color: var(--principal);
+  border-radius: 20px;
+  display: block;
+  height: 45px;
+  left: 92px;
+  overflow: hidden;
+  position: absolute;
+  top: 299px;
+  width: 163px;
+}
+
+.frame .text-wrapper-4 {
+  color: #ffffff;
+  font-family: "Roboto", Helvetica;
+  font-size: 18px;
+  font-weight: 600;
+  left: 57px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 11px;
+  white-space: nowrap;
+}
+
+.frame .input-2 {
+  height: 66px;
+  left: 58px;
+  position: absolute;
+  top: 186px;
+  width: 173px;
+}
+
+.frame .div-2 {
+  border: 1px solid;
+  border-color: var(--principal);
+  border-radius: 6px;
+  height: 39px;
+  left: 0;
+  position: absolute;
+  top: 27px;
+  width: 234px;
+}
+
+.frame .text-wrapper-5 {
+  color: var(--principal);
+  font-family: "Roboto", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: -1px;
+  width: 86px;
+}
+
+.frame .input-3 {
+  height: 66px;
+  left: 58px;
+  position: absolute;
+  top: 87px;
+  width: 173px;
+}
+
+.frame .usu-rio {
+  color: var(--principal);
+  font-family: "Roboto", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: -1px;
+  width: 123px;
+}
+
+.frame .esqueceu-sua-senha {
+  color: var(--principal);
+  font-family: "Roboto", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  left: 112px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 401px;
+  width: 123px;
+}

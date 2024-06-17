@@ -1,0 +1,166 @@
+.cadastro {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .cadastro .div-7 {
+    background-color: #ffffff;
+    height: 932px;
+    overflow: hidden;
+    position: relative;
+    width: 430px;
+  }
+  
+  .cadastro .items-12 {
+    align-items: center;
+    display: inline-flex;
+    gap: var(--variable-collection-spacing-m);
+    justify-content: flex-end;
+    left: -136px;
+    position: absolute;
+    top: -120px;
+  }
+  
+  .cadastro .text-wrapper-21 {
+    color: #000000;
+    font-family: var(--body-text-font-family);
+    font-size: var(--body-text-font-size);
+    font-style: var(--body-text-font-style);
+    font-weight: var(--body-text-font-weight);
+    letter-spacing: var(--body-text-letter-spacing);
+    line-height: var(--body-text-line-height);
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .cadastro .overlap-2 {
+    background-image: url(/public/img/image-4.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    height: 367px;
+    left: 41px;
+    position: absolute;
+    top: 22px;
+    width: 348px;
+  }
+  
+  .cadastro .items-13 {
+    align-items: center;
+    display: inline-flex;
+    gap: var(--variable-collection-spacing-m);
+    justify-content: flex-end;
+    left: 241px;
+    position: relative;
+  }
+  
+  .cadastro .overlap-group-4 {
+    border-radius: 20px;
+    height: 438px;
+    left: 57px;
+    position: absolute;
+    top: 403px;
+    width: 332px;
+  }
+  
+  .cadastro .frame-5-instance {
+    position: relative !important;
+  }
+  
+  .cadastro .frame-3 {
+    left: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+  }
+  
+  .cadastro .entrar-wrapper {
+    background-color: var(--principal);
+    border-radius: 20px;
+    display: block;
+    height: 45px;
+    left: 100px;
+    overflow: hidden;
+    position: absolute;
+    top: 326px;
+    width: 163px;
+  }
+  
+  .cadastro .entrar {
+    color: #ffffff;
+    font-family: "Roboto", Helvetica;
+    font-size: 18px;
+    font-weight: 600;
+    left: 41px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 11px;
+    white-space: nowrap;
+  }
+  
+  .cadastro .input-5 {
+    height: 66px;
+    left: 57px;
+    position: absolute;
+    top: 159px;
+    width: 173px;
+  }
+  
+  .cadastro .frame-4 {
+    border: 1px solid;
+    border-color: var(--principal);
+    border-radius: 6px;
+    height: 39px;
+    left: 0;
+    position: absolute;
+    top: 27px;
+    width: 234px;
+  }
+  
+  .cadastro .text-wrapper-22 {
+    color: var(--principal);
+    font-family: "Roboto", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: -1px;
+    width: 123px;
+  }
+  
+  .cadastro .input-6 {
+    height: 66px;
+    left: 57px;
+    position: absolute;
+    top: 237px;
+    width: 173px;
+  }
+  
+  .cadastro .input-7 {
+    height: 66px;
+    left: 57px;
+    position: absolute;
+    top: 9px;
+    width: 173px;
+  }
+  
+  .cadastro .nome {
+    color: var(--principal);
+    font-family: "Roboto", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 6px;
+    width: 123px;
+  }
+  
