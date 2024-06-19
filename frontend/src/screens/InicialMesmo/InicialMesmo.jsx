@@ -13,7 +13,7 @@ export const InicialMesmo = () => {
           <img
             className="image-3"
             alt="Image"
-            src="/public/img/image-4.png"
+            src="/img/image-4.png"
           />
         </div>
         <div className="items-11">
