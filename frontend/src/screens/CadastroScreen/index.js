@@ -1,1 +1,0 @@
-export { CadastroScreen } from "./CadastroScreen";
