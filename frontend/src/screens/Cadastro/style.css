@@ -1,17 +1,19 @@
 .cadastro-unificado {
   background-color: #ffffff;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   width: 100%;
+  padding: 20px;
 }
 
 .cadastro-unificado .div-7 {
   background-color: #ffffff;
-  height: 932px;
   overflow: hidden;
   position: relative;
-  width: 430px;
+  width: 100%;
+  max-width: 430px;
 }
 
 .cadastro-unificado .items-12 {
@@ -19,9 +21,9 @@
   display: inline-flex;
   gap: var(--variable-collection-spacing-m);
   justify-content: flex-end;
-  left: -136px;
   position: absolute;
-  top: -120px;
+  top: -40px;
+  right: 0;
 }
 
 .cadastro-unificado .text-wrapper-21 {
@@ -39,14 +41,12 @@
 }
 
 .cadastro-unificado .overlap-2 {
-  background-image: url(/public/img/image-4.png);
+  background-image: url("/public/img/image-4.png");
   background-position: 50% 50%;
   background-size: cover;
   height: 367px;
-  left: 41px;
-  position: absolute;
-  top: 22px;
-  width: 348px;
+  width: 353px;
+  margin: 20px auto;
 }
 
 .cadastro-unificado .items-13 {
@@ -54,17 +54,17 @@
   display: inline-flex;
   gap: var(--variable-collection-spacing-m);
   justify-content: flex-end;
-  left: 241px;
-  position: relative;
+  position: absolute;
+  top: -40px;
+  left: 0;
 }
 
 .cadastro-unificado .overlap-group-4 {
   border-radius: 20px;
-  height: 438px;
-  left: 57px;
-  position: absolute;
-  top: 403px;
-  width: 332px;
+  padding: 20px;
+  width: 100%;
+  max-width: 332px;
+  margin: auto;
 }
 
 .cadastro-unificado .frame-5-instance {
@@ -82,11 +82,9 @@
   border-radius: 20px;
   display: block;
   height: 45px;
-  left: 100px;
+  margin-top: 20px;
   overflow: hidden;
-  position: absolute;
-  top: 326px;
-  width: 163px;
+  width: 100%;
 }
 
 .cadastro-unificado .entrar {
@@ -94,84 +92,22 @@
   font-family: "Roboto", Helvetica;
   font-size: 18px;
   font-weight: 600;
-  left: 41px;
   letter-spacing: 0;
   line-height: normal;
-  position: absolute;
   text-align: center;
-  top: 11px;
+  padding: 12px 0;
   white-space: nowrap;
 }
 
-.cadastro-unificado .input-5 {
-  height: 66px;
-  left: 57px;
-  position: absolute;
-  top: 159px;
-  width: 173px;
-}
-
-.cadastro-unificado .frame-4,
-.cadastro-unificado .frame-8 {
-  border: 1px solid;
-  border-color: var(--principal);
+.cadastro-unificado input {
+  border: 1px solid var(--principal);
   border-radius: 6px;
-  height: 39px;
-  left: 0;
-  position: absolute;
-  top: 27px;
-  width: 234px;
-}
-
-.cadastro-unificado .text-wrapper-22,
-.cadastro-unificado .text-wrapper-24,
-.cadastro-unificado .confirma-senha {
-  color: var(--principal);
+  display: block;
   font-family: "Roboto", Helvetica;
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: -1px;
-  width: 123px;
-}
-
-.cadastro-unificado .input-6,
-.cadastro-unificado .input-7,
-.cadastro-unificado .input-8,
-.cadastro-unificado .input-9 {
-  height: 66px;
-  left: 57px;
-  position: absolute;
-  width: 173px;
-}
-
-.cadastro-unificado .input-6 {
-  top: 237px;
-}
-
-.cadastro-unificado .input-7 {
-  top: 9px;
-}
-
-.cadastro-unificado .input-8 {
-  top: 327px;
-}
-
-.cadastro-unificado .input-9 {
-  top: 414px;
-}
-
-.cadastro-unificado .nome {
-  color: var(--principal);
-  font-family: "Roboto", Helvetica;
-  font-size: 14px;
-  font-weight: 500;
-  left: 0;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 6px;
-  width: 123px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: calc(100% - 22px);
+  box-sizing: border-box;
 }

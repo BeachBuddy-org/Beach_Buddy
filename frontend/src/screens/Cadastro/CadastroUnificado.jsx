@@ -1,9 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Frame } from "../../components/Frame";
 import "./style.css";
 
 export const CadastroUnificado = () => {
+  const [aluno, setAluno] = useState({
+    username: "",
+    email: "",
+    cpf: "",
+    firstName: "",
+    lastName: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setAluno({ ...aluno, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch("http://127.0.0.1:5000/api/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ ...aluno, type: "aluno" }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.message) {
+          alert("Aluno cadastrado com sucesso!");
+        } else {
+          alert("Erro ao cadastrar aluno, tente novamente.");
+        }
+      })
+      .catch((error) => {
+        console.error("Erro ao cadastrar aluno:", error);
+        alert("Erro ao cadastrar aluno.");
+      });
+  };
+
   return (
     <div className="cadastro-unificado">
       <div className="div-7">
@@ -16,41 +52,60 @@ export const CadastroUnificado = () => {
           </Link>
         </div>
         <div className="overlap-group-4">
-          <Frame
-            className="frame-3"
-            hasBoton={false}
-            hasEsqueceuSuaSenha={false}
-            hasInput={false}
-            inputClassName="frame-5-instance"
-            text="Sobrenome"
-          />
-          <div className="input-5">
-            <div className="frame-4" />
-            <div className="text-wrapper-22">Usuario</div>
-          </div>
-          <div className="input-6">
-            <div className="frame-4" />
-            <div className="text-wrapper-22">Cpf</div>
-          </div>
-          <div className="input-7">
-            <div className="frame-4" />
-            <div className="nome">Nome</div>
-          </div>
-          <div className="input-8">
-            <div className="frame-8" />
-            <div className="text-wrapper-24">Email</div>
-          </div>
-          <div className="input-9">
-            <div className="frame-8" />
-            <div className="text-wrapper-24">Senha</div>
-          </div>
-          <div className="input-9">
-            <div className="frame-8" />
-            <div className="confirma-senha">Confirma Senha</div>
-          </div>
-          <Link className="entrar-wrapper" to="/cadastro-finalizado">
-            <div className="entrar">Continuar</div>
-          </Link>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="firstName"
+              placeholder="Nome"
+              onChange={handleChange}
+              className="input-7"
+            />
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Sobrenome"
+              onChange={handleChange}
+              className="input-5"
+            />
+            <input
+              type="text"
+              name="username"
+              placeholder="Usuário"
+              onChange={handleChange}
+              className="input-5"
+            />
+            <input
+              type="text"
+              name="cpf"
+              placeholder="CPF"
+              onChange={handleChange}
+              className="input-6"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              onChange={handleChange}
+              className="input-8"
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Senha"
+              onChange={handleChange}
+              className="input-9"
+            />
+            <input
+              type="password"
+              name="confirmPassword"
+              placeholder="Confirma Senha"
+              onChange={handleChange}
+              className="input-9"
+            />
+            <button type="submit" className="entrar-wrapper">
+              <div className="entrar">Continuar</div>
+            </button>
+          </form>
         </div>
       </div>
     </div>
