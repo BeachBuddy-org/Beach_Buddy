@@ -1,187 +1,187 @@
 .inicial-mesmo {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .inicial-mesmo .div-6 {
-    background-color: #ffffff;
-    height: 932px;
-    overflow: hidden;
-    position: relative;
-    width: 430px;
-  }
-  
-  .inicial-mesmo .overlap {
-    height: 367px;
-    left: 36px;
-    position: absolute;
-    top: 22px;
-    width: 353px;
-  }
-  
-  .inicial-mesmo .frame-wrapper {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    gap: var(--variable-collection-spacing-s);
-    height: 99px;
-    left: 0;
-    position: absolute;
-    top: 78px;
-    width: 164px;
-  }
-  
-  .inicial-mesmo .frame-2 {
-    height: 100px;
-    margin-bottom: -1px;
-    position: relative;
-    width: 100px;
-  }
-  
-  .inicial-mesmo .image-3 {
-    height: 367px;
-    left: 5px;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    width: 348px;
-  }
-  
-  .inicial-mesmo .items-11 {
-    align-items: center;
-    display: inline-flex;
-    gap: var(--variable-collection-spacing-m);
-    justify-content: flex-end;
-    left: -136px;
-    position: absolute;
-    top: -120px;
-  }
-  
-  .inicial-mesmo .text-wrapper-18 {
-    color: #000000;
-    font-family: var(--body-text-font-family);
-    font-size: var(--body-text-font-size);
-    font-style: var(--body-text-font-style);
-    font-weight: var(--body-text-font-weight);
-    letter-spacing: var(--body-text-letter-spacing);
-    line-height: var(--body-text-line-height);
-    margin-top: -1px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
-  }
-  
-  .inicial-mesmo .overlap-group-3 {
-    height: 189px;
-    left: 11px;
-    position: absolute;
-    top: 410px;
-    width: 408px;
-  }
-  
-  .inicial-mesmo .sign-up-wrapper {
-    background-color: var(--principal);
-    border-radius: 20px;
-    display: block;
-    height: 45px;
-    left: 123px;
-    overflow: hidden;
-    position: absolute;
-    top: 144px;
-    width: 163px;
-  }
-  
-  .inicial-mesmo .sign-up {
-    color: #ffffff;
-    font-family: "Roboto", Helvetica;
-    font-size: 18px;
-    font-weight: 600;
-    left: 50px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 11px;
-    white-space: nowrap;
-  }
-  
-  .inicial-mesmo .text-wrapper-19 {
-    color: #000000;
-    font-family: "Inter", Helvetica;
-    font-size: 48px;
-    font-weight: 700;
-    left: 0;
-    letter-spacing: -0.96px;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    width: 408px;
-  }
-  
-  .inicial-mesmo .boton-3 {
-    background-color: var(--principal);
-    border-radius: 20px;
-    display: block;
-    height: 45px;
-    left: 134px;
-    overflow: hidden;
-    position: absolute;
-    top: 626px;
-    width: 163px;
-  }
-  
-  .inicial-mesmo .text-wrapper-20 {
-    color: #ffffff;
-    font-family: "Roboto", Helvetica;
-    font-size: 18px;
-    font-weight: 600;
-    left: 57px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 11px;
-    white-space: nowrap;
-  }
-  
-  .inicial-mesmo .criar-ct-wrapper {
-    background-color: var(--principal);
-    border-radius: 20px;
-    display: block;
-    height: 45px;
-    left: 134px;
-    overflow: hidden;
-    position: absolute;
-    top: 698px;
-    width: 163px;
-  }
-  
-  .inicial-mesmo .criar-ct {
-    color: #ffffff;
-    font-family: "Roboto", Helvetica;
-    font-size: 18px;
-    font-weight: 600;
-    left: 50px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 11px;
-    white-space: nowrap;
-  }
-  
-  .inicial-mesmo .IHC-by-bruno-wolf {
-    color: var(--principal);
-    font-family: "Roboto", Helvetica;
-    font-size: 14px;
-    font-weight: 500;
-    left: 139px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 835px;
-    width: 176px;
-  }
-  
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.inicial-mesmo .div-6 {
+  background-color: #ffffff;
+  height: 932px;
+  overflow: hidden;
+  position: relative;
+  width: 430px;
+}
+
+.inicial-mesmo .overlap {
+  height: 367px;
+  left: 36px;
+  position: absolute;
+  top: 22px;
+  width: 353px;
+}
+
+.inicial-mesmo .frame-wrapper {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: var(--variable-collection-spacing-s);
+  height: 99px;
+  left: 0;
+  position: absolute;
+  top: 78px;
+  width: 164px;
+}
+
+.inicial-mesmo .frame-2 {
+  height: 100px;
+  margin-bottom: -1px;
+  position: relative;
+  width: 100px;
+}
+
+.inicial-mesmo .image-3 {
+  height: 367px;
+  left: 5px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 348px;
+}
+
+.inicial-mesmo .items-11 {
+  align-items: center;
+  display: inline-flex;
+  gap: var(--variable-collection-spacing-m);
+  justify-content: flex-end;
+  left: -136px;
+  position: absolute;
+  top: -120px;
+}
+
+.inicial-mesmo .text-wrapper-18 {
+  color: #000000;
+  font-family: var(--body-text-font-family);
+  font-size: var(--body-text-font-size);
+  font-style: var(--body-text-font-style);
+  font-weight: var(--body-text-font-weight);
+  letter-spacing: var(--body-text-letter-spacing);
+  line-height: var(--body-text-line-height);
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.inicial-mesmo .overlap-group-3 {
+  height: 189px;
+  left: 11px;
+  position: absolute;
+  top: 410px;
+  width: 408px;
+}
+
+.inicial-mesmo .aluno-wrapper {
+  background-color: var(--principal);
+  border-radius: 20px;
+  display: block;
+  height: 45px;
+  left: 123px;
+  overflow: hidden;
+  position: absolute;
+  top: 144px;
+  width: 163px;
+}
+
+.inicial-mesmo .aluno {
+  color: #ffffff;
+  font-family: "Roboto", Helvetica;
+  font-size: 18px;
+  font-weight: 600;
+  left: 55px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 11px;
+  white-space: nowrap;
+  justify: center;
+}
+
+.inicial-mesmo .text-wrapper-19 {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 48px;
+  font-weight: 700;
+  left: 0;
+  letter-spacing: -0.96px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 408px;
+}
+
+.inicial-mesmo .boton-3 {
+  background-color: var(--principal);
+  border-radius: 20px;
+  display: block;
+  height: 45px;
+  left: 134px;
+  overflow: hidden;
+  position: absolute;
+  top: 626px;
+  width: 163px;
+}
+
+.inicial-mesmo .text-wrapper-20 {
+  color: #ffffff;
+  font-family: "Roboto", Helvetica;
+  font-size: 18px;
+  font-weight: 600;
+  left: 45px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 11px;
+  white-space: nowrap;
+}
+
+.inicial-mesmo .criar-ct-wrapper {
+  background-color: var(--principal);
+  border-radius: 20px;
+  display: block;
+  height: 45px;
+  left: 134px;
+  overflow: hidden;
+  position: absolute;
+  top: 698px;
+  width: 163px;
+}
+
+.inicial-mesmo .criar-ct {
+  color: #ffffff;
+  font-family: "Roboto", Helvetica;
+  font-size: 18px;
+  font-weight: 600;
+  left: 50px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 11px;
+  white-space: nowrap;
+}
+
+.inicial-mesmo .IHC-by-bruno-wolf {
+  color: var(--principal);
+  font-family: "Roboto", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  left: 139px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 835px;
+  width: 176px;
+}
