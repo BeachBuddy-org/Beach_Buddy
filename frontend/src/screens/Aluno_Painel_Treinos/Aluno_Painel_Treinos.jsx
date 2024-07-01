@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 
-export const TelaPsSeleo = () => {
+export const Aluno_Painel_Treinos = () => {
   return (
     <div className="tela-ps-seleo">
       <div className="div-4">

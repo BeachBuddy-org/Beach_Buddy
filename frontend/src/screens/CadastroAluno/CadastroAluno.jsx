@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 
-export const CadastroUnificado = () => {
+export const CadastroAluno = () => {
   const [aluno, setAluno] = useState({
     username: "",
     email: "",

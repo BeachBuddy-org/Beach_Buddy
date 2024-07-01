@@ -1,1 +1,0 @@
-export { TelaInicialScreen } from "./TelaInicialScreen";
