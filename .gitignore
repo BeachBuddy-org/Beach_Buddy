@@ -12,3 +12,7 @@ backend/app/models/__pycache__/gerente.cpython-39.pyc
 backend/app/models/__pycache__/treinador_ct_association.cpython-39.pyc
 backend/app/models/__pycache__/treinador.cpython-39.pyc
 backend/app/models/__pycache__/treino.cpython-39.pyc
+backend/app/__pycache__/__init__.cpython-310.pyc
+backend/app/__pycache__/routes.cpython-310.pyc
+backend/app/models/__pycache__/aluno.cpython-310.pyc
+backend/app/models/__pycache__/treino.cpython-310.pyc
