@@ -1,0 +1,1 @@
+export { TelaInicialTreinador } from './TelaInicialTreinador';

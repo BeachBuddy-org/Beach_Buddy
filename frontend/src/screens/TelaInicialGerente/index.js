@@ -1,0 +1,1 @@
+export { TelaInicialGerente } from './TelaInicialGerente';

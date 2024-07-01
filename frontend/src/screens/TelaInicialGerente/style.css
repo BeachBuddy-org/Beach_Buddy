@@ -1,0 +1,171 @@
+.tela-inicial-gerente {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.tela-inicial-gerente .div-3 {
+  background-color: #ffffff;
+  height: 932px;
+  overflow: hidden;
+  position: relative;
+  width: 430px;
+}
+
+.tela-inicial-gerente .headline-2 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: var(--variable-collection-spacing-s);
+  height: 99px;
+  left: 36px;
+  position: absolute;
+  top: 100px;
+  width: 164px;
+}
+
+.tela-inicial-gerente .text-wrapper-6 {
+  align-self: stretch;
+  color: #000000;
+  font-family: var(--title-font-family);
+  font-size: var(--title-font-size);
+  font-style: var(--title-font-style);
+  font-weight: var(--title-font-weight);
+  letter-spacing: var(--title-letter-spacing);
+  line-height: var(--title-line-height);
+  margin-top: -1px;
+  position: relative;
+}
+
+.tela-inicial-gerente .input-4 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 523px;
+  left: 30px;
+  position: absolute;
+  top: 321px;
+  width: 339px;
+}
+
+.tela-inicial-gerente .text-wrapper-7 {
+  align-self: stretch;
+  color: #000000;
+  font-family: var(--small-text-font-family);
+  font-size: var(--small-text-font-size);
+  font-style: var(--small-text-font-style);
+  font-weight: var(--small-text-font-weight);
+  letter-spacing: var(--small-text-letter-spacing);
+  line-height: var(--small-text-line-height);
+  margin-top: -1px;
+  position: relative;
+}
+
+.tela-inicial-gerente .checkbox-group-wrapper {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #e0e0e0;
+  border-radius: 8px;
+  box-shadow: var(--button-shadow);
+  display: flex;
+  gap: 8px;
+  height: 467px;
+  padding: 12px 16px;
+  position: relative;
+  width: 100%;
+}
+
+.tela-inicial-gerente .checkbox-group-5 {
+  height: 1px !important;
+  left: -475px !important;
+  top: 55px !important;
+  width: 1px !important;
+}
+
+.tela-inicial-gerente .checkbox-group-6 {
+  height: 434px !important;
+  margin-right: -5px !important;
+  width: 312px !important;
+}
+
+.tela-inicial-gerente .checkbox-group-7 {
+  height: 1px !important;
+  left: -475px !important;
+  top: 135px !important;
+  width: 1px !important;
+}
+
+.tela-inicial-gerente .checkbox-group-8 {
+  flex: 0 0 auto !important;
+  width: 180px !important;
+}
+
+.tela-inicial-gerente .checkbox-group-9 {
+  height: 1px !important;
+  left: -475px !important;
+  top: 95px !important;
+  width: 1px !important;
+}
+
+.tela-inicial-gerente .text-wrapper-8 {
+  color: #000000;
+  font-family: var(--body-text-font-family);
+  font-size: var(--body-text-font-size);
+  font-style: var(--body-text-font-style);
+  font-weight: var(--body-text-font-weight);
+  height: 30px;
+  left: 16px;
+  letter-spacing: var(--body-text-letter-spacing);
+  line-height: var(--body-text-line-height);
+  position: absolute;
+  top: 18px;
+  white-space: nowrap;
+}
+
+.tela-inicial-gerente .items-2 {
+  align-items: center;
+  display: inline-flex;
+  gap: var(--variable-collection-spacing-m);
+  justify-content: flex-end;
+  left: -136px;
+  position: absolute;
+  top: -120px;
+}
+
+.tela-inicial-gerente .text-wrapper-9 {
+  color: #000000;
+  font-family: var(--body-text-font-family);
+  font-size: var(--body-text-font-size);
+  font-style: var(--body-text-font-style);
+  font-weight: var(--body-text-font-weight);
+  letter-spacing: var(--body-text-letter-spacing);
+  line-height: var(--body-text-line-height);
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.tela-inicial-gerente .items-3 {
+  align-items: center;
+  display: inline-flex;
+  gap: var(--variable-collection-spacing-m);
+  justify-content: flex-end;
+  left: 365px;
+  position: absolute;
+  top: 19px;
+}
+
+.tela-inicial-gerente .img {
+  height: 200px;
+  left: 202px;
+  object-fit: cover;
+  position: absolute;
+  top: 85px;
+  width: 200px;
+}
