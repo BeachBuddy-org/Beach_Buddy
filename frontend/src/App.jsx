@@ -1,17 +1,26 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import { Home } from "./screens/Home";
+
 import { TelaInicialAluno } from "./screens/TelaInicialAluno";
-import { TelaInicialScreen } from "./screens/TelaInicialScreen";
-import { TelaPsSeleo } from "./screens/TelaPsSeleo";
-import { TelaIogin } from "./screens/TelaIogin";
-import { TelaIoginScreen } from "./screens/TelaIoginScreen";
-import { InicialMesmo } from "./screens/InicialMesmo";
-import { Cadastro } from "./screens/Cadastro";
+import { TelaInicialGerente } from "./screens/TelaInicialGerente";
+import { TelaInicialTreinador } from "./screens/TelaInicialTreinador";
+
+import { TelaLoginAluno } from "./screens/TelaLoginAluno";
+import { TelaLoginGerente } from "./screens/TelaLoginGerente";
+import { TelaLoginTreinador } from "./screens/TelaLoginGerente";
+
+import { CadastroAluno } from "./screens/CadastroAluno";
+import { CadastroGerente } from "./screens/CadastroGerente";
+import { CadastroTreinador } from "./screens/CadastroTreinador";
+
+import { Aluno_Painel_Treinos } from "./screens/Aluno_Painel_Treinos";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <InicialMesmo />,
+    element: <Home />,
   },
   {
     path: "/tela-inicial-aluno",
@@ -19,23 +28,39 @@ const router = createBrowserRouter([
   },
   {
     path: "/tela-inicial-treinador",
-    element: <TelaInicialScreen />,
+    element: <TelaInicialTreinador />,
   },
   {
-    path: "/tela-pos-selecao",
-    element: <TelaPsSeleo />,
+    path: "/tela-inicial-gerente",
+    element: <TelaInicialGerente />,
   },
   {
-    path: "/tela-iogin-1",
-    element: <TelaIogin />,
+    path: "/tela-aluno-painel-treinos",
+    element: <Aluno_Painel_Treinos />,
   },
   {
-    path: "/tela-iogin-2",
-    element: <TelaIoginScreen />,
+    path: "/tela-login-aluno",
+    element: <TelaLoginAluno />,
   },
   {
-    path: "/cadastro-u351",
-    element: <Cadastro />,
+    path: "/tela-login-gerente",
+    element: <TelaLoginGerente />,
+  },
+  {
+    path: "/tela-login-treinador",
+    element: <TelaLoginTreinador />,
+  },
+  {
+    path: "/cadastro-aluno",
+    element: <CadastroAluno />,
+  },
+  {
+    path: "/cadastro-gerente",
+    element: <CadastroGerente />,
+  },
+  {
+    path: "/cadastro-treinador",
+    element: <CadastroTreinador />,
   },
 ]);
 

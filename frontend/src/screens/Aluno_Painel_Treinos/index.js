@@ -1,1 +1,1 @@
-export { TelaPsSeleo } from "./TelaPsSeleo";
+export { Aluno_Painel_Treinos } from "./Aluno_Painel_Treinos";

@@ -1,1 +1,1 @@
-export { CadastroAluno as Cadastro } from "./CadastroAluno";
+export { CadastroAluno } from "./CadastroAluno";

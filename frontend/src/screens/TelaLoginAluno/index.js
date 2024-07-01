@@ -1,1 +1,1 @@
-export { TelaIoginScreen } from "./TelaIoginScreen";
+export { TelaLoginAluno } from "./TelaLoginAluno";
