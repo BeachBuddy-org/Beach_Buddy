@@ -29,8 +29,8 @@ def register_user():
     email = data.get('email')
     cpf = data.get('cpf')
     password = data.get('password')
-    first_name = data.get('first_name', '')
-    last_name = data.get('last_name', '')
+    first_name = data.get('firstName', '')  # Corrigir para firstName
+    last_name = data.get('lastName', '')    # Corrigir para lastName
 
     if user_type == 'aluno':
         user = Aluno(username=username, email=email, cpf=cpf, first_name=first_name, last_name=last_name)

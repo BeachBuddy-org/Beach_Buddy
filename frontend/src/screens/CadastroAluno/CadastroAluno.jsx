@@ -10,6 +10,7 @@ export const CadastroAluno = () => {
     firstName: "",
     lastName: "",
     password: "",
+    confirmPassword: ""
   });
 
   const handleChange = (e) => {
