@@ -5,23 +5,27 @@ import "./style.css";
 
 export const Tela_Home_Aluno = () => {
   return (
-    <div className="tela-home-aluno">
-      <header className="tela-home-aluno-header">
-        <h1>Bem-vindo, Aluno!</h1>
-      </header>
-      <main className="tela-home-aluno-main">
-        <section className="tela-home-aluno-section">
-          <h2>Suas Atividades</h2>
-          {/* Adicione conteúdo aqui */}
-        </section>
-        <section className="tela-home-aluno-section">
-          <h2>Notícias</h2>
-          {/* Adicione conteúdo aqui */}
-        </section>
-      </main>
-      <footer className="tela-home-aluno-footer">
-        <p>&copy; 2024 Sua Instituição</p>
-      </footer>
+    <div className="inicial-mesmo">
+      <div className="div-6">
+        <div className="overlap">
+          <div className="frame-wrapper">
+            <div className="frame-2" />
+          </div>
+          <img className="image-3" alt="Image" src="/img/image-4.png" />
+        </div>
+        <div className="items-11">
+          <div className="text-wrapper-18">Sair</div>
+        </div>
+        <div className="overlap-group-3">
+          <Link className="aluno-wrapper" to="/tela-login-aluno">
+            <div className="aluno">Login</div>
+          </Link>
+          <div className="text-wrapper-19">Ja é Aluno?</div>
+        </div>
+        <Link className="boton-3" to="/cadastro-aluno">
+          <div className="text-wrapper-20">Cadastre-se</div>
+        </Link>
+      </div>
     </div>
   );
 };

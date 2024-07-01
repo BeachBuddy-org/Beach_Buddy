@@ -9,7 +9,7 @@ import { Tela_Home_Treinador } from "./screens/Tela_Home_Treinador";
 
 import { TelaLoginAluno } from "./screens/TelaLoginAluno";
 import { TelaLoginGerente } from "./screens/TelaLoginGerente";
-import { TelaLoginTreinador } from "./screens/TelaLoginGerente";
+import { TelaLoginTreinador } from "./screens/TelaLoginTreinador";
 
 import { CadastroAluno } from "./screens/CadastroAluno";
 import { CadastroGerente } from "./screens/CadastroGerente";
