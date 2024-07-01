@@ -16,16 +16,16 @@ export const Home = () => {
           <div className="text-wrapper-18">Sair</div>
         </div>
         <div className="overlap-group-3">
-          <Link className="sign-up-wrapper" to="/cadastro-u351">
-            <div className="sign-up">Sou Aluno</div>
+          <Link className="aluno-wrapper" to="/tela-home-aluno">
+            <div className="aluno">Aluno</div>
           </Link>
           <div className="text-wrapper-19">Bem-vindo ao BeachBuddy</div>
         </div>
-        <Link className="boton-3" to="/tela-iogin-2">
-          <div className="text-wrapper-20">Login</div>
+        <Link className="boton-3" to="/tela-home-treinador">
+          <div className="text-wrapper-20">Treinador</div>
         </Link>
-        <Link className="criar-ct-wrapper" to="/tela-iogin-2">
-          <div className="criar-ct">Criar Ct</div>
+        <Link className="criar-ct-wrapper" to="/tela-home-gerente">
+          <div className="criar-ct">Meu CT</div>
         </Link>
       </div>
     </div>

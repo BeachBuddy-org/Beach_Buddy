@@ -3,9 +3,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { Home } from "./screens/Home";
 
-import { TelaInicialAluno } from "./screens/TelaInicialAluno";
-import { TelaInicialGerente } from "./screens/TelaInicialGerente";
-import { TelaInicialTreinador } from "./screens/TelaInicialTreinador";
+import { Tela_Home_Aluno } from "./screens/Tela_Home_Aluno";
+import { Tela_Home_Gerente } from "./screens/Tela_Home_Gerente";
+import { Tela_Home_Treinador } from "./screens/Tela_Home_Treinador";
 
 import { TelaLoginAluno } from "./screens/TelaLoginAluno";
 import { TelaLoginGerente } from "./screens/TelaLoginGerente";
@@ -15,12 +15,28 @@ import { CadastroAluno } from "./screens/CadastroAluno";
 import { CadastroGerente } from "./screens/CadastroGerente";
 import { CadastroTreinador } from "./screens/CadastroTreinador";
 
+import { TelaInicialAluno } from "./screens/TelaInicialAluno";
+import { TelaInicialGerente } from "./screens/TelaInicialGerente";
+import { TelaInicialTreinador } from "./screens/TelaInicialTreinador";
+
 import { Aluno_Painel_Treinos } from "./screens/Aluno_Painel_Treinos";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/tela-home-aluno",
+    element: <Tela_Home_Aluno />,
+  },
+  {
+    path: "/tela-home-gerente",
+    element: <Tela_Home_Gerente />,
+  },
+  {
+    path: "/tela-home-treinador",
+    element: <Tela_Home_Treinador />,
   },
   {
     path: "/tela-inicial-aluno",
