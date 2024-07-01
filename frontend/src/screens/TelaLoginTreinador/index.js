@@ -1,0 +1,1 @@
+export { TelaLoginTreinador } from "./TelaLoginTreinador";

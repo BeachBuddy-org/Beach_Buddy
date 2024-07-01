@@ -1,0 +1,114 @@
+.tela-login-gerente {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .tela-login-gerente .div-7 {
+    background-color: #ffffff;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+  }
+  
+  .tela-login-gerente .items-12 {
+    align-items: center;
+    display: inline-flex;
+    gap: var(--variable-collection-spacing-m);
+    justify-content: flex-end;
+    position: absolute;
+    top: -40px;
+    right: 0;
+  }
+  
+  .tela-login-gerente .text-wrapper-21 {
+    color: #000000;
+    font-family: var(--body-text-font-family);
+    font-size: var(--body-text-font-size);
+    font-style: var(--body-text-font-style);
+    font-weight: var(--body-text-font-weight);
+    letter-spacing: var(--body-text-letter-spacing);
+    line-height: var(--body-text-line-height);
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .tela-login-gerente .overlap-2 {
+    background-image: url("/public/img/image-4.png");
+    background-position: 50% 50%;
+    background-size: cover;
+    height: 367px;
+    width: 353px;
+    margin: 20px auto;
+  }
+  
+  .tela-login-gerente .items-13 {
+    align-items: center;
+    display: inline-flex;
+    gap: var(--variable-collection-spacing-m);
+    justify-content: flex-end;
+    position: absolute;
+    top: -40px;
+    left: 0;
+  }
+  
+  .tela-login-gerente .overlap-group-4 {
+    border-radius: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 332px;
+    margin: auto;
+  }
+  
+  .tela-login-gerente .frame-5-instance {
+    position: relative !important;
+  }
+  
+  .tela-login-gerente .frame-3 {
+    left: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+  }
+  
+  .tela-login-gerente .entrar-wrapper {
+    background-color: var(--principal);
+    border-radius: 20px;
+    display: block;
+    height: 45px;
+    margin-top: 20px;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .tela-login-gerente .entrar {
+    color: #ffffff;
+    font-family: "Roboto", Helvetica;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: center;
+    padding: 12px 0;
+    white-space: nowrap;
+  }
+  
+  .tela-login-gerente input {
+    border: 1px solid var(--principal);
+    border-radius: 6px;
+    display: block;
+    font-family: "Roboto", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: calc(100% - 22px);
+    box-sizing: border-box;
+  }
+  
