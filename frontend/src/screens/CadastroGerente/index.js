@@ -1,0 +1,1 @@
+export { CadastroGerente } from './CadastroGerente';

@@ -1,0 +1,1 @@
+export { CadastroTreinador } from './CadastroTreinador';
