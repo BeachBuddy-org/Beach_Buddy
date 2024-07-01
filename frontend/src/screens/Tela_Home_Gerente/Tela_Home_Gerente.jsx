@@ -4,23 +4,27 @@ import "./style.css";
 
 export const Tela_Home_Gerente = () => {
   return (
-    <div className="tela-home-gerente">
-      <header className="tela-home-gerente-header">
-        <h1>Bem-vindo, Gerente!</h1>
-      </header>
-      <main className="tela-home-gerente-main">
-        <section className="tela-home-gerente-section">
-          <h2>Suas Atividades</h2>
-          {/* Adicione conteúdo aqui */}
-        </section>
-        <section className="tela-home-gerente-section">
-          <h2>Notícias</h2>
-          {/* Adicione conteúdo aqui */}
-        </section>
-      </main>
-      <footer className="tela-home-gerente-footer">
-        <p>&copy; 2024 Sua Instituição</p>
-      </footer>
+    <div className="inicial-mesmo">
+      <div className="div-6">
+        <div className="overlap">
+          <div className="frame-wrapper">
+            <div className="frame-2" />
+          </div>
+          <img className="image-3" alt="Image" src="/img/image-4.png" />
+        </div>
+        <div className="items-11">
+          <div className="text-wrapper-18">Sair</div>
+        </div>
+        <div className="overlap-group-3">
+          <Link className="aluno-wrapper" to="/tela-login-gerente">
+            <div className="aluno">Login</div>
+          </Link>
+          <div className="text-wrapper-19">Ja possui um CT?</div>
+        </div>
+        <Link className="boton-3" to="/cadastro-gerente">
+          <div className="text-wrapper-20">Crie seu CT</div>
+        </Link>
+      </div>
     </div>
   );
 };

@@ -105,7 +105,6 @@
   position: absolute;
   top: 11px;
   white-space: nowrap;
-  justify: center;
 }
 
 .inicial-mesmo .text-wrapper-19 {
@@ -139,7 +138,7 @@
   font-family: "Roboto", Helvetica;
   font-size: 18px;
   font-weight: 600;
-  left: 45px;
+  left: 50px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
