@@ -2,7 +2,6 @@ from app import db
 import bcrypt
 
 class Usuario(db.Model):
-
     __tablename__ = 'usuario'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True, nullable=False)
@@ -30,4 +29,3 @@ class Usuario(db.Model):
     def __str__(self):
         return (f'User(id={self.id}, username={self.username}, email={self.email}, cpf={self.cpf} '
                 f'first_name={self.first_name}, last_name={self.last_name})')
-        

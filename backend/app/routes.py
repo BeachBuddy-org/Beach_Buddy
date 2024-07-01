@@ -120,12 +120,20 @@ def login():
     username = data.get('username')
     password = data.get('password')
 
+    print(f"Tentativa de login para usuário: {username}")  # Log para verificar o usuário
     aluno = Aluno.query.filter_by(username=username).first()
 
-    if aluno and check_password_hash(aluno.password, password):
-        return jsonify({"success": True, "message": "Login bem-sucedido!"})
+    if aluno:
+        print(f"Usuário encontrado: {aluno.username}")  # Log para verificar se o usuário foi encontrado
+        if aluno.check_password(password):
+            print("Senha correta")  # Log para verificar se a senha está correta
+            return jsonify({"success": True, "message": "Login bem-sucedido!"})
+        else:
+            print("Senha incorreta")  # Log para verificar se a senha está incorreta
     else:
-        return jsonify({"success": False, "message": "Nome de usuário ou senha incorretos."}), 401
+        print("Usuário não encontrado")  # Log para verificar se o usuário não foi encontrado
+
+    return jsonify({"success": False, "message": "Nome de usuário ou senha incorretos."}), 401
 
 # Registrar o blueprint
 app.register_blueprint(auth_bp)
