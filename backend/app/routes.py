@@ -1,4 +1,4 @@
-from flask import current_app as app, request, jsonify, render_template
+from flask import current_app as app, request, jsonify, render_template, Blueprint
 from app import db
 from app.models.usuario import Usuario
 from app.models.aluno import Aluno
@@ -7,6 +7,7 @@ from app.models.treinador import Treinador
 from app.models.ct import CT
 from app.models.gerente_ct_association import gerente_ct_association
 from app.models.treino import Treino
+from werkzeug.security import check_password_hash
 
 @app.route('/')
 def home():
@@ -68,7 +69,7 @@ def register_ct():
 
     return jsonify({'message': 'CT registered successfully'}), 201
 
-@app.route('/api/create_treino', methods = ['POST'])
+@app.route('/api/create_treino', methods=['POST'])
 def create_treino():
     data = request.json
     date = data.get('date')
@@ -81,7 +82,6 @@ def create_treino():
     if not ct:
         return jsonify({'error': 'CT not found'}), 404
 
-    
     new_treino = Treino(date=date, horario=horario, ct_id=ct_id, nivel=nivel, recorrente=recorrente)
 
     db.session.add(new_treino)
@@ -111,3 +111,21 @@ def horarios_disponiveis():
         })
 
     return jsonify(resultados)
+
+auth_bp = Blueprint('auth', __name__)
+
+@auth_bp.route('/api/login', methods=['POST'])
+def login():
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+
+    aluno = Aluno.query.filter_by(username=username).first()
+
+    if aluno and check_password_hash(aluno.password, password):
+        return jsonify({"success": True, "message": "Login bem-sucedido!"})
+    else:
+        return jsonify({"success": False, "message": "Nome de usuário ou senha incorretos."}), 401
+
+# Registrar o blueprint
+app.register_blueprint(auth_bp)
