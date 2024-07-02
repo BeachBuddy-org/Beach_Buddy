@@ -42,26 +42,24 @@ export const CadastroGerente = () => {
             body: JSON.stringify({
               name: gerente.ctName,
               cnpj: gerente.cnpj,
-              address: gerente.address,
+              address: gerente.ctAddress,
               gerente_id: data.user_id,
             }),
-          });
-        } else {
-          throw new Error("Erro ao cadastrar gerente, tente novamente.");
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.message) {
+                navigate("/tela-login-gerente");
+                console.log("Gerente cadastrado com sucesso!");
+              } else {
+                console.log("Erro ao cadastrar gerente, tente novamente.");
+              }
+            })
+            .catch((error) => {
+              console.error("Erro ao cadastrar gerente:", error);
+              alert("Erro ao cadastrar gerente.");
+            });
         }
-      })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.message) {
-          navigate("/tela-login-gerente");
-          console.log("Gerente cadastrado com sucesso!");
-        } else {
-          console.log("Erro ao cadastrar gerente, tente novamente.");
-        }
-      })
-      .catch((error) => {
-        console.error("Erro ao cadastrar gerente:", error);
-        alert("Erro ao cadastrar gerente.");
       });
   };
 
