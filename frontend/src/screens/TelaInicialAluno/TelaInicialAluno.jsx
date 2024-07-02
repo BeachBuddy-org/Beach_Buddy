@@ -31,7 +31,9 @@ export const TelaInicialAluno = () => {
         .then((ctsData) => {
           setCts(ctsData);
         })
-        .catch((error) => console.error("Erro ao buscar dados do aluno e CTs:", error));
+        .catch((error) =>
+          console.error("Erro ao buscar dados do aluno e CTs:", error)
+        );
     }
   }, [user]);
 
@@ -42,10 +44,7 @@ export const TelaInicialAluno = () => {
           <div className="text-wrapper-6">{user ? user : "Carregando..."}</div>
         </div>
         <div className="logout">
-          <div className="items-2" onClick={logout}>
-            <div className="text-wrapper-9">Sair</div>
-          </div>
-          <Link className="items-3" to="/tela-login-aluno">
+          <Link className="items-3" onClick={logout} to="/tela-login-aluno">
             <div className="text-wrapper-9">Sair</div>
           </Link>
         </div>
@@ -55,7 +54,11 @@ export const TelaInicialAluno = () => {
         <div className="text-wrapper-7">Cts inscritos</div>
         <div className="checkbox-group-wrapper">
           {cts.map((ct) => (
-            <Link key={ct.id} to={`/aluno-painel-treinos/${ct.id}`} className="ct-link">
+            <Link
+              key={ct.id}
+              to={`/aluno-painel-treinos/${ct.id}`}
+              className="ct-link"
+            >
               <div className="ct-item">{ct.name}</div>
             </Link>
           ))}
@@ -63,7 +66,9 @@ export const TelaInicialAluno = () => {
       </div>
       {userData && (
         <div className="user-info">
-          <p>Nome: {userData.firstName} {userData.lastName}</p>
+          <p>
+            Nome: {userData.firstName} {userData.lastName}
+          </p>
           <p>Email: {userData.email}</p>
           <p>CPF: {userData.cpf}</p>
         </div>
