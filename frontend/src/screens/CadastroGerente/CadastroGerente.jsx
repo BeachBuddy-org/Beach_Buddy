@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 
 export const CadastroGerente = () => {
@@ -15,6 +15,7 @@ export const CadastroGerente = () => {
     ctAddress: "",
     cnpj: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,6 +34,7 @@ export const CadastroGerente = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.message) {
+          navigate("/tela-login-gerente");
           alert("Gerente cadastrado com sucesso!");
         } else {
           alert("Erro ao cadastrar gerente, tente novamente.");

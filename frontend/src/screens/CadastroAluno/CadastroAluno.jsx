@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 
 export const CadastroAluno = () => {
@@ -10,8 +10,9 @@ export const CadastroAluno = () => {
     firstName: "",
     lastName: "",
     password: "",
-    confirmPassword: ""
+    confirmPassword: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,6 +31,7 @@ export const CadastroAluno = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.message) {
+          navigate("/tela-login-aluno"); // Redirecionar para a página de login
           alert("Aluno cadastrado com sucesso!");
         } else {
           alert("Erro ao cadastrar aluno, tente novamente.");

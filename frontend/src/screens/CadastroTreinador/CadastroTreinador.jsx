@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 
 export const CadastroTreinador = () => {
@@ -12,6 +12,7 @@ export const CadastroTreinador = () => {
     password: "",
     confirmPassword: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,6 +31,7 @@ export const CadastroTreinador = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.message) {
+          navigate("/tela-login-treinador");
           alert("Treinador cadastrado com sucesso!");
         } else {
           alert("Erro ao cadastrar treinador, tente novamente.");
