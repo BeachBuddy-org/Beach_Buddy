@@ -18,6 +18,7 @@ import { TelaInicialAluno } from "./screens/TelaInicialAluno";
 import { TelaInicialGerente } from "./screens/TelaInicialGerente";
 import { TelaInicialTreinador } from "./screens/TelaInicialTreinador";
 import { Aluno_Painel_Treinos } from "./screens/Aluno_Painel_Treinos";
+import { Gerente_Painel_CT } from "./screens/Gerente_Painel_CT";
 
 const router = createBrowserRouter([
   {
@@ -49,8 +50,12 @@ const router = createBrowserRouter([
     element: <ProtectedRoute element={<TelaInicialGerente />} />,
   },
   {
-    path: "/aluno-painel-treinos/:ctId",
-    element: <ProtectedRoute element={<Aluno_Painel_Treinos />} />,
+    path: "/tela-aluno-painel-treinos/:ctId",
+    element: <Aluno_Painel_Treinos />,
+  },
+  {
+    path: "/tela-gerente-painel-ct/:ctId",
+    element: <ProtectedRoute element={<Gerente_Painel_CT />} />,
   },
   {
     path: "/tela-login-aluno",

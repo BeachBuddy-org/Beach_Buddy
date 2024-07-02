@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { CheckboxGroup } from "../../components/CheckboxGroup"; // Certifique-se de que o caminho está correto
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import "./style.css";
 
 export const TelaInicialGerente = () => {
   const { user, logout } = useAuth();
   const [userData, setUserData] = useState(null);
+  const [cts, setCts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.log("useEffect chamado com user:", user); // Log para verificar o estado do user
@@ -26,8 +27,28 @@ export const TelaInicialGerente = () => {
         .catch((error) =>
           console.error("Erro ao buscar dados do usuário:", error)
         );
+
+      // Fetch CTs gerenciados
+      fetch(`http://127.0.0.1:5000/api/cts/${user}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Erro ao buscar CTs do gerente");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log("CTs recebidos:", data); // Adicionar log
+          setCts(data);
+        })
+        .catch((error) =>
+          console.error("Erro ao buscar CTs do gerente:", error)
+        );
     }
   }, [user]);
+
+  const handleCtClick = (ctId) => {
+    navigate(`/gerente-painel-ct/${ctId}`);
+  };
 
   return (
     <div className="tela-inicial-gerente">
@@ -38,28 +59,11 @@ export const TelaInicialGerente = () => {
         <div className="input-4">
           <div className="text-wrapper-7">CTs Gerenciados</div>
           <div className="checkbox-group-wrapper">
-            <CheckboxGroup
-              checkboxBasesCheckboxBasesIconWrapperColor="/public/img/color@2x.png"
-              checkboxBasesCheckboxBasesIconWrapperColor1="/public/img/color@2x.png"
-              checkboxBasesCheckboxBasesIconWrapperColorClassName="checkbox-group-7"
-              checkboxBasesCheckboxBasesIconWrapperColorClassNameOverride="checkbox-group-9"
-              checkboxBasesCheckboxBasesIconWrapperImg="/public/img/color@2x.png"
-              checkboxBasesCheckboxBasesIconWrapperImgClassName="checkbox-group-5"
-              checkboxHasDiv={false}
-              checkboxStateDefaultLabelClassName="checkbox-group-8"
-              checkboxStateDefaultLabelClassNameOverride="checkbox-group-8"
-              checkboxStateFocusLabelClassName="checkbox-group-8"
-              checkboxStateHoverLabelClassName="checkbox-group-8"
-              checkboxStateHoverLabelClassNameOverride="checkbox-group-8"
-              checkboxStateProp="disabled"
-              checkboxText="Ct Rafa do Volei"
-              checkboxText1="Ct do Pelé"
-              checkboxText2="Futvolei Rio"
-              checkboxVisible={false}
-              className="checkbox-group-6"
-              numberOfItems="five-items"
-              to="/tela-pos-selecao"
-            />
+            {cts.map((ct) => (
+              <button key={ct.id} onClick={() => handleCtClick(ct.id)} className="ct-button">
+                {ct.name}
+              </button>
+            ))}
           </div>
         </div>
         <div className="text-wrapper-8">Página do Gerente</div>
@@ -85,3 +89,5 @@ export const TelaInicialGerente = () => {
     </div>
   );
 };
+
+export default TelaInicialGerente;

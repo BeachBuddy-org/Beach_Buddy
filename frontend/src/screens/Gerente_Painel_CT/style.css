@@ -1,0 +1,58 @@
+/* src/screens/style.css */
+.gerente-painel-ct {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .gerente-painel-ct h1 {
+    font-family: "Roboto", Helvetica, sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .gerente-painel-ct .form-section {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .gerente-painel-ct .form-section h2 {
+    font-family: "Roboto", Helvetica, sans-serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .gerente-painel-ct .form-section form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .gerente-painel-ct .form-section form input,
+  .gerente-painel-ct .form-section form button {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: "Roboto", Helvetica, sans-serif;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .gerente-painel-ct .form-section form button {
+    background-color: #6c63ff;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .gerente-painel-ct .form-section form button:hover {
+    background-color: #5753c9;
+  }
+  
