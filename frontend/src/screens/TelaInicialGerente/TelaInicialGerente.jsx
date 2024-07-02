@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { CheckboxGroup } from "../../components/CheckboxGroup";  // Certifique-se de que o caminho está correto
 import "./style.css";
 
 export const TelaInicialGerente = () => {
@@ -7,7 +8,7 @@ export const TelaInicialGerente = () => {
     <div className="tela-inicial-gerente">
       <div className="div-3">
         <div className="headline-2">
-          <div className="text-wrapper-6">Bem-vindo, Gerente</div>
+          <div className="text-wrapper-6">Jane</div>
         </div>
         <div className="input-4">
           <div className="text-wrapper-7">CTs Gerenciados</div>
@@ -26,8 +27,8 @@ export const TelaInicialGerente = () => {
               checkboxStateHoverLabelClassName="checkbox-group-8"
               checkboxStateHoverLabelClassNameOverride="checkbox-group-8"
               checkboxStateProp="disabled"
-              checkboxText="CT Rafa do Volei"
-              checkboxText1="CT do Pelé"
+              checkboxText="Ct Rafa do Volei"
+              checkboxText1="Ct do Pelé"
               checkboxText2="Futvolei Rio"
               checkboxVisible={false}
               className="checkbox-group-6"
@@ -40,7 +41,7 @@ export const TelaInicialGerente = () => {
         <div className="items-2">
           <div className="text-wrapper-9">Sair</div>
         </div>
-        <Link className="items-3" to="/tela-login-gerente">
+        <Link className="items-3" to="/tela-login">
           <div className="text-wrapper-9">Sair</div>
         </Link>
         <img

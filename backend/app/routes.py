@@ -156,6 +156,27 @@ def login_treinador():
 
     return jsonify({"success": False, "message": "Nome de usuário ou senha incorretos."}), 401
 
+@auth_bp.route('/api/login-gerente', methods=['POST'])
+def login_gerente():
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+
+    print(f"Tentativa de login para gerente: {username}")  # Log para verificar o usuário
+    gerente = Gerente.query.filter_by(username=username).first()
+
+    if gerente:
+        print(f"Usuário encontrado: {gerente.username}")  # Log para verificar se o usuário foi encontrado
+        if gerente.check_password(password):
+            print("Senha correta")  # Log para verificar se a senha está correta
+            return jsonify({"success": True, "message": "Login bem-sucedido!"})
+        else:
+            print("Senha incorreta")  # Log para verificar se a senha está incorreta
+    else:
+        print("Usuário não encontrado")  # Log para verificar se o usuário não foi encontrado
+
+    return jsonify({"success": False, "message": "Nome de usuário ou senha incorretos."}), 401
+
 
 # Registrar o blueprint
 app.register_blueprint(auth_bp)
