@@ -1,3 +1,4 @@
+/* src/pages/style.css */
 .tela-inicial-gerente {
   background-color: #ffffff;
   display: flex;
@@ -57,7 +58,7 @@
   font-style: var(--small-text-font-style);
   font-weight: var(--small-text-font-weight);
   letter-spacing: var(--small-text-letter-spacing);
-  line-height: var(--small-text-line-height);
+  line-height: var (--small-text-line-height);
   text-align: center;
 }
 
@@ -102,7 +103,7 @@
   font-style: var(--body-text-font-style);
   font-weight: var(--body-text-font-weight);
   letter-spacing: var(--body-text-letter-spacing);
-  line-height: var(--body-text-line-height);
+  line-height: var (--body-text-line-height);
   text-align: center;
   margin-top: 20px;
 }
@@ -121,8 +122,8 @@
   font-size: var(--body-text-font-size);
   font-style: var(--body-text-font-style);
   font-weight: var(--body-text-font-weight);
-  letter-spacing: var(--body-text-letter-spacing);
-  line-height: var(--body-text-line-height);
+  letter-spacing: var (--body-text-letter-spacing);
+  line-height: var (--body-text-line-height);
   text-align: center;
 }
 

@@ -1,10 +1,10 @@
-// src/screens/Gerente_Painel_CT.jsx
+// src/screens/Gerente_Painel_CT/Gerente_Painel_CT.jsx
 import React, { useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import "./style.css";
 
-export const Gerente_Painel_CT = () => {
+const Gerente_Painel_CT = () => {
   const { ctId } = useParams();
   const [alunoData, setAlunoData] = useState({ username: "", email: "", cpf: "" });
   const [treinadorData, setTreinadorData] = useState({ username: "", email: "", cpf: "" });
@@ -28,7 +28,7 @@ export const Gerente_Painel_CT = () => {
   const handleAlunoSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://127.0.0.1:5000/api/register_aluno", { ...alunoData, ct_id: ctId });
+      await axios.post("http://127.0.0.1:5000/api/register_aluno", { ...alunoData, ct_id: ctId });
       alert("Aluno cadastrado com sucesso!");
     } catch (error) {
       console.error("Erro ao cadastrar aluno:", error);
@@ -39,7 +39,7 @@ export const Gerente_Painel_CT = () => {
   const handleTreinadorSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://127.0.0.1:5000/api/register_treinador", { ...treinadorData, ct_id: ctId });
+      await axios.post("http://127.0.0.1:5000/api/register_treinador", { ...treinadorData, ct_id: ctId });
       alert("Treinador cadastrado com sucesso!");
     } catch (error) {
       console.error("Erro ao cadastrar treinador:", error);
@@ -50,7 +50,7 @@ export const Gerente_Painel_CT = () => {
   const handleTreinoSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://127.0.0.1:5000/api/create_treino", { ...treinoData, ctId });
+      await axios.post("http://127.0.0.1:5000/api/create_treino", { ...treinoData, ctId });
       alert("Treino criado com sucesso!");
     } catch (error) {
       console.error("Erro ao criar treino:", error);

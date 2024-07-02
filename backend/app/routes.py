@@ -260,5 +260,16 @@ def get_aluno_cts(username):
     cts = [{'id': ct.id, 'name': ct.name} for ct in aluno.cts]
     return jsonify(cts), 200
 
+# Adicione esta função ao seu routes.py
+@app.route('/api/gerente_cts/<username>', methods=['GET'])
+def get_gerente_cts(username):
+    gerente = Gerente.query.filter_by(username=username).first()
+    if not gerente:
+        return jsonify({'error': 'Gerente não encontrado'}), 404
+
+    cts = [{'id': ct.id, 'name': ct.name} for ct in gerente.cts]
+    return jsonify(cts), 200
+
+
 # Registrar o blueprint
 app.register_blueprint(auth_bp)

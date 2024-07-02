@@ -1,3 +1,4 @@
+// src/App.jsx
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AuthProvider } from "./screens/contexts/AuthContext";
@@ -17,7 +18,7 @@ import { TelaInicialAluno } from "./screens/TelaInicialAluno";
 import { TelaInicialGerente } from "./screens/TelaInicialGerente";
 import { TelaInicialTreinador } from "./screens/TelaInicialTreinador";
 import { Aluno_Painel_Treinos } from "./screens/Aluno_Painel_Treinos";
-import { Gerente_Painel_CT } from "./screens/Gerente_Painel_CT";
+import Gerente_Painel_CT from "./screens/Gerente_Painel_CT";  // Importação correta
 
 const router = createBrowserRouter([
   {
@@ -78,7 +79,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/gerente-painel-ct/:ctId",
-    element: <ProtectedRoute element={<Gerente_Painel_CT />} />,
+    element: <ProtectedRoute element={<Gerente_Painel_CT />} />,  // Importação correta
   },
 ]);
 
