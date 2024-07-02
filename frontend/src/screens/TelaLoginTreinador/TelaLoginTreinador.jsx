@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 import axios from "axios";
 import "./style.css";
 
 export const TelaLoginTreinador = () => {
   const [loginData, setLoginData] = useState({ username: "", password: "" });
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,7 +24,7 @@ export const TelaLoginTreinador = () => {
       );
       console.log("Resposta da API:", response.data); // Log para verificar a resposta da API
       if (response.data.success) {
-        login(); // Atualize o estado de autenticação
+        login(loginData.username); // Atualize o estado de autenticação
         navigate("/tela-inicial-treinador");
       } else {
         alert("Erro ao fazer login, tente novamente.");
