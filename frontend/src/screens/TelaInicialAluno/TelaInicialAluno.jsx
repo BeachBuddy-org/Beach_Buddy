@@ -1,14 +1,13 @@
 // src/pages/TelaInicialAluno.jsx
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import "./style.css";
 
 export const TelaInicialAluno = () => {
   const { user, logout } = useAuth();
   const [userData, setUserData] = useState(null);
-  const [ctsInscritos, setCtsInscritos] = useState([]);
-  const navigate = useNavigate();
+  const [cts, setCts] = useState([]);
 
   useEffect(() => {
     if (user) {
@@ -21,25 +20,20 @@ export const TelaInicialAluno = () => {
         })
         .then((data) => {
           setUserData(data);
-          fetch(`http://127.0.0.1:5000/api/cts_inscritos/${user}`)
-            .then((response) => {
-              if (!response.ok) {
-                throw new Error("Erro ao buscar CTs inscritos");
-              }
-              return response.json();
-            })
-            .then((cts) => {
-              setCtsInscritos(cts);
-            })
-            .catch((error) => console.error("Erro ao buscar CTs inscritos:", error));
+          return fetch(`http://127.0.0.1:5000/api/aluno_cts/${user}`);
         })
-        .catch((error) => console.error("Erro ao buscar dados do usuário:", error));
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Erro ao buscar CTs do aluno");
+          }
+          return response.json();
+        })
+        .then((ctsData) => {
+          setCts(ctsData);
+        })
+        .catch((error) => console.error("Erro ao buscar dados do aluno e CTs:", error));
     }
   }, [user]);
-
-  const handleCtClick = (ctId) => {
-    navigate(`/aluno-painel-treinos/${ctId}`);
-  };
 
   return (
     <div className="tela-inicial-aluno">
@@ -50,10 +44,10 @@ export const TelaInicialAluno = () => {
         <div className="input-4">
           <div className="text-wrapper-7">Cts inscritos</div>
           <div className="checkbox-group-wrapper">
-            {ctsInscritos.map((ct) => (
-              <div key={ct.id} onClick={() => handleCtClick(ct.id)}>
-                {ct.name}
-              </div>
+            {cts.map((ct) => (
+              <Link key={ct.id} to={`/aluno-painel-treinos/${ct.id}`} className="ct-link">
+                <div className="ct-item">{ct.name}</div>
+              </Link>
             ))}
           </div>
         </div>
@@ -68,11 +62,13 @@ export const TelaInicialAluno = () => {
       </div>
       {userData && (
         <div>
+          {/* Renderizar dados do usuário */}
           <p>
             Nome: {userData.firstName} {userData.lastName}
           </p>
           <p>Email: {userData.email}</p>
           <p>CPF: {userData.cpf}</p>
+          {/* Outros dados do usuário */}
         </div>
       )}
     </div>
