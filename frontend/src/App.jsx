@@ -1,5 +1,4 @@
 // src/App.jsx
-// src/App.jsx
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AuthProvider } from "./screens/contexts/AuthContext";
@@ -50,8 +49,8 @@ const router = createBrowserRouter([
     element: <ProtectedRoute element={<TelaInicialGerente />} />,
   },
   {
-    path: "/tela-aluno-painel-treinos",
-    element: <Aluno_Painel_Treinos />,
+    path: "/aluno-painel-treinos/:ctId",
+    element: <ProtectedRoute element={<Aluno_Painel_Treinos />} />,
   },
   {
     path: "/tela-login-aluno",

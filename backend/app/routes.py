@@ -194,5 +194,38 @@ def get_user_info(username):
     else:
         return jsonify({"error": "Usuário não encontrado"}), 404
 
+@app.route('/api/cts_inscritos/<username>', methods=['GET'])
+def get_cts_inscritos(username):
+    aluno = Aluno.query.filter_by(username=username).first()
+    if not aluno:
+        return jsonify({'error': 'Aluno não encontrado'}), 404
+
+    cts = [ct.to_dict() for ct in aluno.cts]
+    return jsonify(cts), 200
+
+@app.route('/api/treinos/<int:ct_id>', methods=['GET'])
+def get_treinos(ct_id):
+    treinos = Treino.query.filter_by(ct_id=ct_id).all()
+    return jsonify([treino.to_dict() for treino in treinos]), 200
+
+@app.route('/api/confirmar_presenca', methods=['POST'])
+def confirmar_presenca():
+    data = request.json
+    treino_id = data.get('treino_id')
+    username = data.get('username')
+
+    aluno = Aluno.query.filter_by(username=username).first()
+    if not aluno:
+        return jsonify({'error': 'Aluno não encontrado'}), 404
+
+    treino = Treino.query.get(treino_id)
+    if not treino:
+        return jsonify({'error': 'Treino não encontrado'}), 404
+
+    treino.alunos.append(aluno)
+    db.session.commit()
+
+    return jsonify({'message': 'Presença confirmada com sucesso!'}), 200
+
 # Registrar o blueprint
 app.register_blueprint(auth_bp)
