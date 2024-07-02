@@ -178,5 +178,21 @@ def login_gerente():
     return jsonify({"success": False, "message": "Nome de usuário ou senha incorretos."}), 401
 
 
+@app.route('/api/userdata/<username>', methods=['GET'])
+def get_user_info(username):
+    user = Usuario.query.filter_by(username=username).first()
+    if user:
+        user_info = {
+            "username": user.username,
+            "email": user.email,
+            "cpf": user.cpf,
+            "firstName": user.first_name,
+            "lastName": user.last_name
+        }
+        print(user_info)  # Imprimir as informações do usuário no console
+        return jsonify(user_info), 200
+    else:
+        return jsonify({"error": "Usuário não encontrado"}), 404
+
 # Registrar o blueprint
 app.register_blueprint(auth_bp)

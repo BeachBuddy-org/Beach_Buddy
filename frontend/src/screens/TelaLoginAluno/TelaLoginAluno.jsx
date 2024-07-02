@@ -25,7 +25,7 @@ export const TelaLoginAluno = () => {
       );
       console.log("Resposta da API:", response.data);
       if (response.data.success) {
-        login(); // Atualize o estado de autenticação
+        login(loginData.username); // Atualize o estado de autenticação
         navigate("/tela-inicial-aluno");
       } else {
         alert("Erro ao fazer login, tente novamente.");
