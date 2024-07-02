@@ -60,7 +60,6 @@ def register_ct():
         return jsonify({'error': 'Gerente not found'}), 404
 
     new_ct = CT(name=name, cnpj=cnpj, address=address)
-
     db.session.add(new_ct)
     db.session.commit()
 
@@ -68,6 +67,7 @@ def register_ct():
     db.session.commit()
 
     return jsonify({'message': 'CT registered successfully'}), 201
+
 
 @app.route('/api/create_treino', methods=['POST'])
 def create_treino():
@@ -245,7 +245,6 @@ def inscrever_aluno_ct():
     db.session.commit()
 
     return jsonify({'message': 'Aluno inscrito com sucesso no CT!'}), 200
-
 
 # Registrar o blueprint
 app.register_blueprint(auth_bp)
