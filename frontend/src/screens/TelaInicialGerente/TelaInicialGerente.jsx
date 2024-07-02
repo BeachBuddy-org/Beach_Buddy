@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { CheckboxGroup } from "../../components/CheckboxGroup";  // Certifique-se de que o caminho está correto
+import { CheckboxGroup } from "../../components/CheckboxGroup"; // Certifique-se de que o caminho está correto
+import { useAuth } from "../contexts/AuthContext";
 import "./style.css";
 
 export const TelaInicialGerente = () => {
+  const { logout } = useAuth();
   return (
     <div className="tela-inicial-gerente">
       <div className="div-3">
@@ -38,17 +40,13 @@ export const TelaInicialGerente = () => {
           </div>
         </div>
         <div className="text-wrapper-8">Página do Gerente</div>
-        <div className="items-2">
+        <div className="items-2" onClick={logout}>
           <div className="text-wrapper-9">Sair</div>
         </div>
         <Link className="items-3" to="/tela-login">
           <div className="text-wrapper-9">Sair</div>
         </Link>
-        <img
-          className="img"
-          alt="Image"
-          src="/public/img/image-2.png"
-        />
+        <img className="img" alt="Image" src="/public/img/image-2.png" />
       </div>
     </div>
   );
