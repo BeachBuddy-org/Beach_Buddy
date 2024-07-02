@@ -227,5 +227,25 @@ def confirmar_presenca():
 
     return jsonify({'message': 'Presença confirmada com sucesso!'}), 200
 
+@app.route('/api/inscrever_aluno_ct', methods=['POST'])
+def inscrever_aluno_ct():
+    data = request.json
+    username = data.get('username')
+    ct_id = data.get('ct_id')
+
+    aluno = Aluno.query.filter_by(username=username).first()
+    if not aluno:
+        return jsonify({'error': 'Aluno não encontrado'}), 404
+
+    ct = CT.query.get(ct_id)
+    if not ct:
+        return jsonify({'error': 'CT não encontrado'}), 404
+
+    aluno.cts.append(ct)
+    db.session.commit()
+
+    return jsonify({'message': 'Aluno inscrito com sucesso no CT!'}), 200
+
+
 # Registrar o blueprint
 app.register_blueprint(auth_bp)
