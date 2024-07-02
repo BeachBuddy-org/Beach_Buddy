@@ -1,9 +1,13 @@
+// src/pages/TelaInicialAluno.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import { CheckboxGroup } from "../../components/CheckboxGroup";
+import { useAuth } from "../contexts/AuthContext";
 import "./style.css";
 
 export const TelaInicialAluno = () => {
+  const { logout } = useAuth();
+
   return (
     <div className="tela-inicial-aluno">
       <div className="div-3">
@@ -38,18 +42,16 @@ export const TelaInicialAluno = () => {
           </div>
         </div>
         <div className="text-wrapper-8">Página do Aluno</div>
-        <div className="items-2">
+        <div className="items-2" onClick={logout}>
           <div className="text-wrapper-9">Sair</div>
         </div>
         <Link className="items-3" to="/tela-iogin-2">
           <div className="text-wrapper-9">Sair</div>
         </Link>
-        <img
-          className="img"
-          alt="Image"
-          src="/public/img/image-2.png"
-        />
+        <img className="img" alt="Image" src="/public/img/image-2.png" />
       </div>
     </div>
   );
 };
+
+export default TelaInicialAluno;

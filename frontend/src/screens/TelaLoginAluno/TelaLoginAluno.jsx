@@ -1,11 +1,14 @@
+// src/screens/TelaLoginAluno.jsx
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 import axios from "axios";
 import "./style.css";
 
 export const TelaLoginAluno = () => {
   const [loginData, setLoginData] = useState({ username: "", password: "" });
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -14,11 +17,15 @@ export const TelaLoginAluno = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Tentativa de login com os dados:", loginData);  // Log para verificar os dados
+    console.log("Tentativa de login com os dados:", loginData);
     try {
-      const response = await axios.post("http://127.0.0.1:5000/api/login", loginData);
-      console.log("Resposta da API:", response.data);  // Log para verificar a resposta da API
+      const response = await axios.post(
+        "http://127.0.0.1:5000/api/login",
+        loginData
+      );
+      console.log("Resposta da API:", response.data);
       if (response.data.success) {
+        login(); // Atualize o estado de autenticação
         navigate("/tela-inicial-aluno");
       } else {
         alert("Erro ao fazer login, tente novamente.");
