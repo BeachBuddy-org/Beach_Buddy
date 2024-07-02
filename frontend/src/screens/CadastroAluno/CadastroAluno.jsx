@@ -32,9 +32,9 @@ export const CadastroAluno = () => {
       .then((data) => {
         if (data.message) {
           navigate("/tela-login-aluno"); // Redirecionar para a página de login
-          alert("Aluno cadastrado com sucesso!");
+          console.log("Sucesso ao cadastrar aluno.");
         } else {
-          alert("Erro ao cadastrar aluno, tente novamente.");
+          console.log("Erro ao cadastrar aluno, tente novamente.");
         }
       })
       .catch((error) => {

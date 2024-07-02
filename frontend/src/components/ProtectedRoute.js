@@ -8,6 +8,7 @@ const ProtectedRoute = ({ element, ...rest }) => {
   const location = useLocation();
 
   const getRedirectPath = () => {
+    console.log(location.pathname);
     if (location.pathname.startsWith("/tela-inicial-treinador")) {
       return "/tela-login-treinador";
     } else if (location.pathname.startsWith("/tela-inicial-gerente")) {

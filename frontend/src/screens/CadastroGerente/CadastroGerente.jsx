@@ -35,9 +35,9 @@ export const CadastroGerente = () => {
       .then((data) => {
         if (data.message) {
           navigate("/tela-login-gerente");
-          alert("Gerente cadastrado com sucesso!");
+          console.log("Gerente cadastrado com sucesso!");
         } else {
-          alert("Erro ao cadastrar gerente, tente novamente.");
+          console.log("Erro ao cadastrar gerente, tente novamente.");
         }
       })
       .catch((error) => {

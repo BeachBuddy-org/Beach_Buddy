@@ -32,9 +32,9 @@ export const CadastroTreinador = () => {
       .then((data) => {
         if (data.message) {
           navigate("/tela-login-treinador");
-          alert("Treinador cadastrado com sucesso!");
+          console.log("Treinador cadastrado com sucesso!");
         } else {
-          alert("Erro ao cadastrar treinador, tente novamente.");
+          console.log("Erro ao cadastrar treinador, tente novamente.");
         }
       })
       .catch((error) => {
