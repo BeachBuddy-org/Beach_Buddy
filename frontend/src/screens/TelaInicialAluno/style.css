@@ -2,33 +2,31 @@
 .tela-inicial-aluno {
   background-color: #ffffff;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.tela-inicial-aluno .div-3 {
-  background-color: #ffffff;
-  height: 932px;
-  overflow: hidden;
-  position: relative;
-  width: 430px;
+.tela-inicial-aluno .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 430px;
+  margin-bottom: 20px;
 }
 
 .tela-inicial-aluno .headline-2 {
-  align-items: flex-start;
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: var(--variable-collection-spacing-s);
-  height: 99px;
-  left: 36px;
-  position: absolute;
-  top: 100px;
-  width: 164px;
 }
 
 .tela-inicial-aluno .text-wrapper-6 {
-  align-self: stretch;
   color: #000000;
   font-family: var(--title-font-family);
   font-size: var(--title-font-size);
@@ -36,24 +34,24 @@
   font-weight: var(--title-font-weight);
   letter-spacing: var(--title-letter-spacing);
   line-height: var(--title-line-height);
-  margin-top: -1px;
-  position: relative;
+  text-align: center;
+}
+
+.tela-inicial-aluno .logout {
+  display: flex;
+  gap: var(--variable-collection-spacing-m);
 }
 
 .tela-inicial-aluno .input-4 {
-  align-items: flex-start;
+  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  height: 523px;
-  left: 30px;
-  position: absolute;
-  top: 321px;
-  width: 339px;
+  margin-top: 20px;
+  width: 100%;
 }
 
 .tela-inicial-aluno .text-wrapper-7 {
-  align-self: stretch;
   color: #000000;
   font-family: var(--small-text-font-family);
   font-size: var(--small-text-font-size);
@@ -61,13 +59,10 @@
   font-weight: var(--small-text-font-weight);
   letter-spacing: var(--small-text-letter-spacing);
   line-height: var(--small-text-line-height);
-  margin-top: -1px;
-  position: relative;
+  text-align: center;
 }
 
 .tela-inicial-aluno .checkbox-group-wrapper {
-  align-items: flex-start;
-  align-self: stretch;
   background-color: #ffffff;
   border: 1px solid;
   border-color: #e0e0e0;
@@ -77,8 +72,9 @@
   flex-direction: column;
   gap: 8px;
   padding: 12px 16px;
-  position: relative;
   width: 100%;
+  max-width: 360px;
+  box-sizing: border-box;
 }
 
 .tela-inicial-aluno .ct-link {
@@ -106,23 +102,18 @@
   font-size: var(--body-text-font-size);
   font-style: var(--body-text-font-style);
   font-weight: var(--body-text-font-weight);
-  height: 30px;
-  left: 16px;
   letter-spacing: var(--body-text-letter-spacing);
   line-height: var(--body-text-line-height);
-  position: absolute;
-  top: 18px;
-  white-space: nowrap;
+  text-align: center;
+  margin-top: 20px;
 }
 
-.tela-inicial-aluno .items-2 {
+.tela-inicial-aluno .items-2,
+.tela-inicial-aluno .items-3 {
   align-items: center;
   display: inline-flex;
   gap: var(--variable-collection-spacing-m);
-  justify-content: flex-end;
-  left: -136px;
-  position: absolute;
-  top: -120px;
+  justify-content: center;
 }
 
 .tela-inicial-aluno .text-wrapper-9 {
@@ -133,27 +124,27 @@
   font-weight: var(--body-text-font-weight);
   letter-spacing: var(--body-text-letter-spacing);
   line-height: var(--body-text-line-height);
-  margin-top: -1px;
-  position: relative;
-  white-space: nowrap;
-  width: fit-content;
-}
-
-.tela-inicial-aluno .items-3 {
-  align-items: center;
-  display: inline-flex;
-  gap: var(--variable-collection-spacing-m);
-  justify-content: flex-end;
-  left: 365px;
-  position: absolute;
-  top: 19px;
+  text-align: center;
 }
 
 .tela-inicial-aluno .img {
   height: 200px;
-  left: 202px;
   object-fit: cover;
-  position: absolute;
-  top: 85px;
-  width: 200px;
+  margin-top: 20px;
+}
+
+.tela-inicial-aluno .user-info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .tela-inicial-aluno .headline-2,
+  .tela-inicial-aluno .input-4,
+  .tela-inicial-aluno .text-wrapper-8,
+  .tela-inicial-aluno .items-2,
+  .tela-inicial-aluno .items-3 {
+    align-items: center;
+    text-align: center;
+  }
 }
