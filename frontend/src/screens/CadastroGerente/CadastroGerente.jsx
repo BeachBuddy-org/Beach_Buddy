@@ -34,6 +34,25 @@ export const CadastroGerente = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.message) {
+          return fetch("http://127.0.0.1:5000/api/register_ct", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name: gerente.ctName,
+              cnpj: gerente.cnpj,
+              address: gerente.address,
+              gerente_id: data.user_id,
+            }),
+          });
+        } else {
+          throw new Error("Erro ao cadastrar gerente, tente novamente.");
+        }
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.message) {
           navigate("/tela-login-gerente");
           console.log("Gerente cadastrado com sucesso!");
         } else {

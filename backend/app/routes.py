@@ -45,7 +45,7 @@ def register_user():
     db.session.add(user)
     db.session.commit()
 
-    return jsonify({'message': 'User registered successfully'}), 201
+    return jsonify({'message': 'User registered successfully', 'user_id': user.id}), 201
 
 @app.route('/api/register_ct', methods=['POST'])
 def register_ct():
@@ -62,10 +62,15 @@ def register_ct():
     new_ct = CT(name=name, cnpj=cnpj, address=address)
     db.session.add(new_ct)
     db.session.commit()
+    
+    if (new_ct.id == None):
+        return jsonify({'error': 'Erro ao criar ct'}), 404
 
     gerente.cts.append(new_ct)
+    new_ct.gerentes.append(gerente)
     db.session.commit()
 
+    print("CT registeres successfully")
     return jsonify({'message': 'CT registered successfully'}), 201
 
 
@@ -245,6 +250,15 @@ def inscrever_aluno_ct():
     db.session.commit()
 
     return jsonify({'message': 'Aluno inscrito com sucesso no CT!'}), 200
+
+@app.route('/api/aluno_cts/<username>', methods=['GET'])
+def get_aluno_cts(username):
+    aluno = Aluno.query.filter_by(username=username).first()
+    if not aluno:
+        return jsonify({'error': 'Aluno não encontrado'}), 404
+
+    cts = [{'id': ct.id, 'name': ct.name} for ct in aluno.cts]
+    return jsonify(cts), 200
 
 # Registrar o blueprint
 app.register_blueprint(auth_bp)
