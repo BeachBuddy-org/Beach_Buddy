@@ -2,7 +2,7 @@ from app import db
 from .aluno_ct_association import aluno_ct_association
 from .gerente_ct_association import gerente_ct_association
 from .treinador_ct_association import treinador_ct_association
-from .treino import Treino
+
 
 class CT(db.Model):
     __tablename__ = 'ct'

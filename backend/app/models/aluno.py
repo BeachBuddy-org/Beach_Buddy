@@ -2,6 +2,7 @@ from app import db
 from .usuario import Usuario
 from .aluno_ct_association import aluno_ct_association
 
+
 class Aluno(Usuario):
     __tablename__ = 'aluno'
     id = db.Column(db.Integer, db.ForeignKey('usuario.id'), primary_key=True)

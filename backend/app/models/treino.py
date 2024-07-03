@@ -1,11 +1,8 @@
 from app import db
-from datetime import time
 from sqlalchemy import Boolean
 
-presenca = db.Table('presenca',
-    db.Column('treino_id', db.Integer, db.ForeignKey('treino.id'), primary_key=True),
-    db.Column('aluno_id', db.Integer, db.ForeignKey('aluno.id'), primary_key=True)
-)
+presenca = db.Table('presenca', db.Column('treino_id', db.Integer, db.ForeignKey('treino.id'), primary_key=True), db.Column('aluno_id', db.Integer, db.ForeignKey('aluno.id'), primary_key=True))
+
 
 class Treino(db.Model):
     __tablename__ = 'treino'
@@ -14,7 +11,7 @@ class Treino(db.Model):
     horario = db.Column(db.Time, nullable=False)
     ct_id = db.Column(db.Integer, db.ForeignKey('ct.id'), nullable=False)
     nivel = db.Column(db.String(64), nullable=False)
-    recorrente = db.Column(Boolean, default = True, nullable=False)
+    recorrente = db.Column(Boolean, default=True, nullable=False)
 
     ct = db.relationship('CT', back_populates='treinos')
     alunos = db.relationship('Aluno', secondary=presenca, backref=db.backref('treinos', lazy='dynamic'))
