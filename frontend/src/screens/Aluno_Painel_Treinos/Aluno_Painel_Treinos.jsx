@@ -39,7 +39,6 @@ export const Aluno_Painel_Treinos = () => {
 
   const handleConfirmarPresenca = async (treinoId) => {
     try {
-      console.log(user, " Tentou confirmar treino");
       await axios.post(`http://127.0.0.1:5000/api/confirmar_presenca`, {
         treino_id: treinoId,
         username: user,
