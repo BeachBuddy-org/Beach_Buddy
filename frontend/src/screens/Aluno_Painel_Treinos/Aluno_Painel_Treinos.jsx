@@ -11,16 +11,17 @@ export const Aluno_Painel_Treinos = () => {
   const [treinos, setTreinos] = useState([]);
 
   useEffect(() => {
-    const fetchTreinos = async () => {
-      try {
-        const response = await axios.get(`http://127.0.0.1:5000/api/treinos/${ctId}`);
-        setTreinos(response.data);
-      } catch (error) {
-        console.error("Erro ao buscar treinos:", error);
-      }
-    };
-
-    fetchTreinos();
+    fetch(`http://127.0.0.1:5000/api/treinos/${ctId}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Erro ao buscar treinos");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setTreinos(data);
+      })
+      .catch((error) => console.error("Erro ao buscar treinos:", error));
   }, [ctId]);
 
   const handleConfirmarPresenca = async (treinoId) => {

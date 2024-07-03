@@ -50,7 +50,7 @@ const router = createBrowserRouter([
     element: <ProtectedRoute element={<TelaInicialGerente />} />,
   },
   {
-    path: "/tela-aluno-painel-treinos",
+    path: "/aluno-painel-treinos/:ctId",
     element: <Aluno_Painel_Treinos />,
   },
   {
