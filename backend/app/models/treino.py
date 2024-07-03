@@ -24,3 +24,14 @@ class Treino(db.Model):
 
     def __str__(self):
         return (f'Treino(id={self.id}, name={self.name}, date={self.date}, ct_id={self.ct_id}), horario={self.horario}, nivel{self.nivel}')
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'date': self.date,
+            'horario': self.horario.strftime('%H:%M:%S'),
+            'ct_id': self.ct_id,
+            'nivel': self.nivel,
+            'recorrente': self.recorrente,
+            'alunos': [aluno.username for aluno in self.alunos]
+        }

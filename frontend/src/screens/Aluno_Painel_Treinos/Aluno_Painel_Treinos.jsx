@@ -1,4 +1,5 @@
 // src/screens/Aluno_Painel_Treinos.jsx
+
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
@@ -19,6 +20,7 @@ export const Aluno_Painel_Treinos = () => {
         return response.json();
       })
       .then((data) => {
+        console.log("Treinos ", data);
         setTreinos(data);
       })
       .catch((error) => console.error("Erro ao buscar treinos:", error));
@@ -28,9 +30,18 @@ export const Aluno_Painel_Treinos = () => {
     try {
       await axios.post(`http://127.0.0.1:5000/api/confirmar_presenca`, {
         treino_id: treinoId,
-        username: user
+        username: user.username,
       });
       alert("Presença confirmada com sucesso!");
+
+      // Atualiza a lista de treinos após confirmar a presença
+      setTreinos((prevTreinos) =>
+        prevTreinos.map((treino) =>
+          treino.id === treinoId
+            ? { ...treino, alunos: [...treino.alunos, user.username] }
+            : treino
+        )
+      );
     } catch (error) {
       console.error("Erro ao confirmar presença:", error);
       alert("Erro ao confirmar presença.");
@@ -42,9 +53,23 @@ export const Aluno_Painel_Treinos = () => {
       <h1>Treinos Disponíveis</h1>
       <ul>
         {treinos.map((treino) => (
-          <li key={treino.id}>
-            {treino.name} - {treino.date}
-            <button onClick={() => handleConfirmarPresenca(treino.id)}>
+          <li key={treino.id} className="treino-item">
+            <div className="treino-info">
+              <h2>{treino.name}</h2>
+              <p>Data: {treino.date}</p>
+              <p>Horário: {treino.horario}</p>
+              <p>Nível: {treino.nivel}</p>
+              <p>
+                Confirmados:{" "}
+                {treino.alunos && treino.alunos.length > 0
+                  ? treino.alunos.join(", ")
+                  : "Nenhum"}
+              </p>
+            </div>
+            <button
+              className="confirmar-presenca-btn"
+              onClick={() => handleConfirmarPresenca(treino.id)}
+            >
               Confirmar Presença
             </button>
           </li>
