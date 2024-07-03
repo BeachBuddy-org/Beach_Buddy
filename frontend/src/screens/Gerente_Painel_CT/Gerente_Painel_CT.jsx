@@ -112,13 +112,6 @@ export const Gerente_Painel_CT = () => {
             value={alunoData.cpf}
             onChange={handleAlunoChange}
           />
-          <input
-            type="password"
-            name="password"
-            placeholder="Senha"
-            value={alunoData.password}
-            onChange={handleAlunoChange}
-          />
           <button type="submit">Cadastrar Aluno</button>
         </form>
       </div>
