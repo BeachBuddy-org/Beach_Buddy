@@ -30,6 +30,7 @@ export const TelaInicialGerente = () => {
         })
         .then((ctsData) => {
           setCts(ctsData);
+          console.log("Log cts: ", cts);
         })
         .catch((error) =>
           console.error("Erro ao buscar dados do gerente e CTs:", error)
