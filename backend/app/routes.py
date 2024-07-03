@@ -229,7 +229,7 @@ def confirmar_presenca():
     data = request.json
     treino_id = data.get('treino_id')
     username = data.get('username')
-
+    print(username)
     aluno = Aluno.query.filter_by(username=username).first()
     if not aluno:
         return jsonify({'error': 'Aluno não encontrado'}), 404

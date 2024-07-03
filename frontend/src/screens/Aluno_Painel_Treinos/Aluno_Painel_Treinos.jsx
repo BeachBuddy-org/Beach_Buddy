@@ -1,36 +1,48 @@
 // src/screens/Aluno_Painel_Treinos.jsx
 
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import axios from "axios";
 import "./style.css";
 
 export const Aluno_Painel_Treinos = () => {
   const { ctId } = useParams();
-  const { user } = useAuth();
+  const location = useLocation();
+  // const { user } = useAuth();
   const [treinos, setTreinos] = useState([]);
 
+  // Função para obter os parâmetros de consulta
+  const getQueryParams = () => {
+    return new URLSearchParams(location.search);
+  };
+
+  // Obter o valor do parâmetro de consulta 'user'
+  const user = getQueryParams().get("user");
+
   useEffect(() => {
-    fetch(`http://127.0.0.1:5000/api/treinos/${ctId}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Erro ao buscar treinos");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log("Treinos ", data);
-        setTreinos(data);
-      })
-      .catch((error) => console.error("Erro ao buscar treinos:", error));
-  }, [ctId]);
+    if (ctId) {
+      fetch(`http://127.0.0.1:5000/api/treinos/${ctId}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Erro ao buscar treinos");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log("Treinos ", data);
+          setTreinos(data);
+        })
+        .catch((error) => console.error("Erro ao buscar treinos:", error));
+    }
+  }, [ctId, user]);
 
   const handleConfirmarPresenca = async (treinoId) => {
     try {
+      console.log(user, " Tentou confirmar treino");
       await axios.post(`http://127.0.0.1:5000/api/confirmar_presenca`, {
         treino_id: treinoId,
-        username: user.username,
+        username: user,
       });
       alert("Presença confirmada com sucesso!");
 

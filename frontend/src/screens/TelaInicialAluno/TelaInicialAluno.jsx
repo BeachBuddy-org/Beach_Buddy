@@ -56,7 +56,7 @@ export const TelaInicialAluno = () => {
           {cts.map((ct) => (
             <Link
               key={ct.id}
-              to={`/aluno-painel-treinos/${ct.id}`}
+              to={`/aluno-painel-treinos/${ct.id}?user=${user}`}
               className="ct-link"
             >
               <div className="ct-item">{ct.name}</div>
