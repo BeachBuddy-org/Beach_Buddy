@@ -3,7 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import "./style.css";
 
-export const Gerente_Painel_CT = () => {
+const Gerente_Painel_CT = () => {
   const { ctId } = useParams();
   const [alunoData, setAlunoData] = useState({
     username: "",
@@ -58,7 +58,7 @@ export const Gerente_Painel_CT = () => {
         ...treinadorData,
         ct_id: ctId,
       });
-      alert("Treinador cadastrado com sucesso!");
+      alert("Treinador cadastrado e associado com sucesso!");
     } catch (error) {
       console.error("Erro ao cadastrar treinador:", error);
       alert("Erro ao cadastrar treinador.");
@@ -68,7 +68,6 @@ export const Gerente_Painel_CT = () => {
   const handleTreinoSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Convert the time to the correct format
       const horario = treinoData.horario.includes(":")
         ? treinoData.horario
         : `${treinoData.horario}:00`;

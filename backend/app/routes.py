@@ -295,6 +295,38 @@ def register_aluno():
 
     return jsonify({'message': 'Aluno cadastrado com sucesso no CT!'}), 200
 
+@app.route('/api/register_treinador', methods=['POST'])
+def register_treinador():
+    data = request.json
+    username = data.get('username')
+    email = data.get('email')
+    cpf = data.get('cpf')
+    ct_id = data.get('ct_id')
+
+    if not all([username, email, cpf, ct_id]):
+        return jsonify({'error': 'Todos os campos são obrigatórios'}), 400
+
+    # Verificar se o treinador já existe no banco de dados
+    treinador = Treinador.query.filter_by(email=email).first()
+    if not treinador:
+        # Criar um treinador com uma senha padrão, caso não exista
+        treinador = Treinador(username=username, email=email, cpf=cpf)
+        treinador.set_password("default_password")  # Definindo uma senha padrão
+        db.session.add(treinador)
+        db.session.commit()
+
+    # Verificar se o CT existe
+    ct = CT.query.get(ct_id)
+    if not ct:
+        return jsonify({'error': 'CT não encontrado'}), 404
+
+    # Associar o treinador ao CT
+    if treinador not in ct.treinadores:
+        ct.treinadores.append(treinador)
+        db.session.commit()
+
+    return jsonify({'message': 'Treinador registrado e associado ao CT com sucesso'}), 201
+
 # Adicione esta função ao seu routes.py
 @app.route('/api/gerente_cts/<username>', methods=['GET'])
 def get_gerente_cts(username):
