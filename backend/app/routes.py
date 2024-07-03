@@ -260,6 +260,30 @@ def get_aluno_cts(username):
     cts = [{'id': ct.id, 'name': ct.name} for ct in aluno.cts]
     return jsonify(cts), 200
 
+@app.route('/api/register_aluno', methods=['POST'])
+def register_aluno():
+    data = request.json
+    username = data.get('username')
+    email = data.get('email')
+    cpf = data.get('cpf')
+    ct_id = data.get('ct_id')
+
+    # Verifica se o aluno já está cadastrado no banco de dados
+    aluno = Aluno.query.filter_by(username=username, email=email, cpf=cpf).first()
+    if not aluno:
+        return jsonify({'error': 'Aluno não encontrado. Por favor, verifique as informações fornecidas.'}), 404
+
+    # Verifica se o CT existe
+    ct = CT.query.get(ct_id)
+    if not ct:
+        return jsonify({'error': 'CT não encontrado'}), 404
+
+    # Associa o aluno ao CT
+    aluno.cts.append(ct)
+    db.session.commit()
+
+    return jsonify({'message': 'Aluno cadastrado com sucesso no CT!'}), 200
+
 # Adicione esta função ao seu routes.py
 @app.route('/api/gerente_cts/<username>', methods=['GET'])
 def get_gerente_cts(username):
