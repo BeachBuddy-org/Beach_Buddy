@@ -29,8 +29,4 @@ class CT(db.Model):
             'name': self.name,
             'cnpj': self.cnpj,
             'address': self.address,
-            'gerentes': [gerente for gerente in self.gerentes],
-            'alunos': [aluno for aluno in self.alunos],
-            'treinadores': [treinador for treinador in self.treinadores],
-            'treinos': [treino for treino in self.treinos],
         }

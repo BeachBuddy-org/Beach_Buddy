@@ -348,6 +348,14 @@ def get_gerente_cts(username):
     cts = [{'id': ct.id, 'name': ct.name} for ct in gerente.cts]
     return jsonify(cts), 200
 
+@app.route('/api/treinador_cts/<username>', methods=['GET'])
+def get_treinador_cts(username):
+    treinador = Treinador.query.filter_by(username=username).first()
+    if not treinador:
+        return jsonify({"error": "Treinador não encontrado"}), 404
+
+    cts = [ct.to_dict() for ct in treinador.cts]
+    return jsonify(cts), 200
 
 # Registrar o blueprint
 app.register_blueprint(auth_bp)

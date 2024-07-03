@@ -19,3 +19,4 @@ class Treinador(Usuario):
     def __str__(self):
         return (f'Treinador(id={self.id}, username={self.username}, email={self.email}, '
                 f'first_name={self.first_name}, last_name={self.last_name}')
+

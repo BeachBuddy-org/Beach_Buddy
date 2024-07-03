@@ -26,6 +26,7 @@ export const TelaInicialTreinador = () => {
           if (!response.ok) {
             throw new Error("Erro ao buscar CTs do treinador");
           }
+          console.log(response);
           return response.json();
         })
         .then((ctsData) => {
