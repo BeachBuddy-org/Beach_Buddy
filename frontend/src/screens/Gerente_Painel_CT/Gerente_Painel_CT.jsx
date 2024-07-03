@@ -1,4 +1,3 @@
-// src/screens/Gerente_Painel_CT/Gerente_Painel_CT.jsx
 import React, { useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -50,13 +49,15 @@ const Gerente_Painel_CT = () => {
   const handleTreinoSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://127.0.0.1:5000/api/create_treino", { ...treinoData, ctId });
+      // Convert the time to the correct format
+      const horario = treinoData.horario.includes(':') ? treinoData.horario : `${treinoData.horario}:00`;
+      await axios.post("http://127.0.0.1:5000/api/create_treino", { ...treinoData, ct_id: ctId, horario });
       alert("Treino criado com sucesso!");
     } catch (error) {
       console.error("Erro ao criar treino:", error);
       alert("Erro ao criar treino.");
     }
-  };
+  };  
 
   return (
     <div className="gerente-painel-ct">
@@ -68,6 +69,7 @@ const Gerente_Painel_CT = () => {
           <input type="text" name="username" placeholder="Nome de Usuário" value={alunoData.username} onChange={handleAlunoChange} />
           <input type="email" name="email" placeholder="Email" value={alunoData.email} onChange={handleAlunoChange} />
           <input type="text" name="cpf" placeholder="CPF" value={alunoData.cpf} onChange={handleAlunoChange} />
+          <input type="password" name="password" placeholder="Senha" value={alunoData.password} onChange={handleAlunoChange} />
           <button type="submit">Cadastrar Aluno</button>
         </form>
       </div>

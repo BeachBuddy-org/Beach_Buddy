@@ -8,6 +8,7 @@ from app.models.ct import CT
 from app.models.gerente_ct_association import gerente_ct_association
 from app.models.treino import Treino
 from werkzeug.security import check_password_hash
+from datetime import time
 
 @app.route('/')
 def home():
@@ -78,14 +79,23 @@ def register_ct():
 def create_treino():
     data = request.json
     date = data.get('date')
-    horario = data.get('horario')
+    horario_str = data.get('horario')
     ct_id = data.get('ct_id')
     nivel = data.get('nivel')
     recorrente = data.get('recorrencia')
 
+    if not ct_id:
+        return jsonify({'error': 'ct_id não fornecido'}), 400
+
     ct = CT.query.get(ct_id)
     if not ct:
-        return jsonify({'error': 'CT not found'}), 404
+        return jsonify({'error': 'CT não encontrado'}), 404
+
+    # Converta a string de horário para um objeto time
+    try:
+        horario = time.fromisoformat(horario_str)
+    except ValueError:
+        return jsonify({'error': 'Formato de horário inválido'}), 400
 
     new_treino = Treino(date=date, horario=horario, ct_id=ct_id, nivel=nivel, recorrente=recorrente)
 
@@ -96,6 +106,7 @@ def create_treino():
     db.session.commit()
 
     return jsonify({'message': 'Treino criado com sucesso'})
+
 
 @app.route('/horarios_disponiveis', methods=['GET'])
 def horarios_disponiveis():
