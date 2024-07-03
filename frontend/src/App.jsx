@@ -19,6 +19,7 @@ import { TelaInicialGerente } from "./screens/TelaInicialGerente";
 import { TelaInicialTreinador } from "./screens/TelaInicialTreinador";
 import { Aluno_Painel_Treinos } from "./screens/Aluno_Painel_Treinos";
 import { Gerente_Painel_CT } from "./screens/Gerente_Painel_CT";
+import { Treinador_Painel_Treinos } from "./screens/Treinador_Painel_Treinos"; // Importe o novo componente
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
     element: <Aluno_Painel_Treinos />,
   },
   {
+    path: "/treinador-painel-treinos/:ctId",
+    element: <ProtectedRoute element={<Treinador_Painel_Treinos />} />, // Adicionando a nova rota
+  },
+  {
     path: "/tela-login-aluno",
     element: <TelaLoginAluno />,
   },
@@ -79,7 +84,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/gerente-painel-ct/:ctId",
-    element: <ProtectedRoute element={<Gerente_Painel_CT />} />, // Importação correta
+    element: <ProtectedRoute element={<Gerente_Painel_CT />} />,
   },
 ]);
 

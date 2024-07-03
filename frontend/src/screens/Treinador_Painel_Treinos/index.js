@@ -1,0 +1,1 @@
+export { Treinador_Painel_Treinos } from './Treinador_Painel_Treinos';

@@ -1,33 +1,32 @@
+/* src/pages/style.css */
 .tela-inicial-treinador {
   background-color: #ffffff;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.tela-inicial-treinador .div-3 {
-  background-color: #ffffff;
-  height: 932px;
-  overflow: hidden;
-  position: relative;
-  width: 430px;
+.tela-inicial-treinador .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 430px;
+  margin-bottom: 20px;
 }
 
 .tela-inicial-treinador .headline-2 {
-  align-items: flex-start;
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: var(--variable-collection-spacing-s);
-  height: 99px;
-  left: 36px;
-  position: absolute;
-  top: 100px;
-  width: 164px;
 }
 
 .tela-inicial-treinador .text-wrapper-6 {
-  align-self: stretch;
   color: #000000;
   font-family: var(--title-font-family);
   font-size: var(--title-font-size);
@@ -35,24 +34,24 @@
   font-weight: var(--title-font-weight);
   letter-spacing: var(--title-letter-spacing);
   line-height: var(--title-line-height);
-  margin-top: -1px;
-  position: relative;
+  text-align: center;
+}
+
+.tela-inicial-treinador .logout {
+  display: flex;
+  gap: var(--variable-collection-spacing-m);
 }
 
 .tela-inicial-treinador .input-4 {
-  align-items: flex-start;
+  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  height: 523px;
-  left: 30px;
-  position: absolute;
-  top: 321px;
-  width: 339px;
+  margin-top: 20px;
+  width: 100%;
 }
 
 .tela-inicial-treinador .text-wrapper-7 {
-  align-self: stretch;
   color: #000000;
   font-family: var(--small-text-font-family);
   font-size: var(--small-text-font-size);
@@ -60,56 +59,41 @@
   font-weight: var(--small-text-font-weight);
   letter-spacing: var(--small-text-letter-spacing);
   line-height: var(--small-text-line-height);
-  margin-top: -1px;
-  position: relative;
+  text-align: center;
 }
 
 .tela-inicial-treinador .checkbox-group-wrapper {
-  align-items: flex-start;
-  align-self: stretch;
   background-color: #ffffff;
   border: 1px solid;
   border-color: #e0e0e0;
   border-radius: 8px;
   box-shadow: var(--button-shadow);
   display: flex;
+  flex-direction: column;
   gap: 8px;
-  height: 467px;
   padding: 12px 16px;
-  position: relative;
   width: 100%;
+  max-width: 360px;
+  box-sizing: border-box;
 }
 
-.tela-inicial-treinador .checkbox-group-5 {
-  height: 1px !important;
-  left: -475px !important;
-  top: 55px !important;
-  width: 1px !important;
+.tela-inicial-treinador .ct-link {
+  text-decoration: none;
+  color: #000000;
+  font-family: var(--body-text-font-family);
+  font-size: var(--body-text-font-size);
+  font-style: var(--body-text-font-style);
+  font-weight: var(--body-text-font-weight);
+  letter-spacing: var(--body-text-letter-spacing);
+  line-height: var(--body-text-line-height);
 }
 
-.tela-inicial-treinador .checkbox-group-6 {
-  height: 434px !important;
-  margin-right: -5px !important;
-  width: 312px !important;
-}
-
-.tela-inicial-treinador .checkbox-group-7 {
-  height: 1px !important;
-  left: -475px !important;
-  top: 135px !important;
-  width: 1px !important;
-}
-
-.tela-inicial-treinador .checkbox-group-8 {
-  flex: 0 0 auto !important;
-  width: 180px !important;
-}
-
-.tela-inicial-treinador .checkbox-group-9 {
-  height: 1px !important;
-  left: -475px !important;
-  top: 95px !important;
-  width: 1px !important;
+.tela-inicial-treinador .ct-item {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  width: 100%;
 }
 
 .tela-inicial-treinador .text-wrapper-8 {
@@ -118,23 +102,18 @@
   font-size: var(--body-text-font-size);
   font-style: var(--body-text-font-style);
   font-weight: var(--body-text-font-weight);
-  height: 30px;
-  left: 16px;
   letter-spacing: var(--body-text-letter-spacing);
   line-height: var(--body-text-line-height);
-  position: absolute;
-  top: 18px;
-  white-space: nowrap;
+  text-align: center;
+  margin-top: 20px;
 }
 
-.tela-inicial-treinador .items-2 {
+.tela-inicial-treinador .items-2,
+.tela-inicial-treinador .items-3 {
   align-items: center;
   display: inline-flex;
   gap: var(--variable-collection-spacing-m);
-  justify-content: flex-end;
-  left: -136px;
-  position: absolute;
-  top: -120px;
+  justify-content: center;
 }
 
 .tela-inicial-treinador .text-wrapper-9 {
@@ -145,27 +124,27 @@
   font-weight: var(--body-text-font-weight);
   letter-spacing: var(--body-text-letter-spacing);
   line-height: var(--body-text-line-height);
-  margin-top: -1px;
-  position: relative;
-  white-space: nowrap;
-  width: fit-content;
-}
-
-.tela-inicial-treinador .items-3 {
-  align-items: center;
-  display: inline-flex;
-  gap: var(--variable-collection-spacing-m);
-  justify-content: flex-end;
-  left: 365px;
-  position: absolute;
-  top: 19px;
+  text-align: center;
 }
 
 .tela-inicial-treinador .img {
   height: 200px;
-  left: 202px;
   object-fit: cover;
-  position: absolute;
-  top: 85px;
-  width: 200px;
+  margin-top: 20px;
+}
+
+.tela-inicial-treinador .user-info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .tela-inicial-treinador .headline-2,
+  .tela-inicial-treinador .input-4,
+  .tela-inicial-treinador .text-wrapper-8,
+  .tela-inicial-treinador .items-2,
+  .tela-inicial-treinador .items-3 {
+    align-items: center;
+    text-align: center;
+  }
 }
