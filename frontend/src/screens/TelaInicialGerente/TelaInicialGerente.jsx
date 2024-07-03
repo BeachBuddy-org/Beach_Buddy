@@ -45,7 +45,7 @@ export const TelaInicialGerente = () => {
           <div className="text-wrapper-6">{user ? user : "Carregando..."}</div>
         </div>
         <div className="logout">
-          <Link className="items-3" onClick={logout} to="/tela-login">
+          <Link className="items-3" onClick={logout} to="/">
             <div className="text-wrapper-9">Sair</div>
           </Link>
         </div>
