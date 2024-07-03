@@ -327,6 +327,16 @@ def register_treinador():
 
     return jsonify({'message': 'Treinador registrado e associado ao CT com sucesso'}), 201
 
+@app.route('/api/ct/<int:ct_id>/treinadores', methods=['GET'])
+def get_treinadores_by_ct(ct_id):
+    ct = CT.query.get(ct_id)
+    if not ct:
+        return jsonify({'error': 'CT não encontrado'}), 404
+
+    treinadores = ct.treinadores
+    return jsonify({'treinadores': [{'id': t.id, 'username': t.username, 'email': t.email} for t in treinadores]})
+
+
 # Adicione esta função ao seu routes.py
 @app.route('/api/gerente_cts/<username>', methods=['GET'])
 def get_gerente_cts(username):

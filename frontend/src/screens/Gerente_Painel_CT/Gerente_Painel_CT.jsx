@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import "./style.css";
@@ -21,6 +21,20 @@ const Gerente_Painel_CT = () => {
     nivel: "",
     recorrente: false,
   });
+  const [treinadores, setTreinadores] = useState([]);
+
+  useEffect(() => {
+    const fetchTreinadores = async () => {
+      try {
+        const response = await axios.get(`http://127.0.0.1:5000/api/ct/${ctId}/treinadores`);
+        setTreinadores(response.data.treinadores);
+      } catch (error) {
+        console.error("Erro ao buscar treinadores:", error);
+      }
+    };
+
+    fetchTreinadores();
+  }, [ctId]);
 
   const handleAlunoChange = (e) => {
     const { name, value } = e.target;
@@ -59,6 +73,8 @@ const Gerente_Painel_CT = () => {
         ct_id: ctId,
       });
       alert("Treinador cadastrado e associado com sucesso!");
+      // Atualizar a lista de treinadores após registrar
+      setTreinadores([...treinadores, treinadorData]);
     } catch (error) {
       console.error("Erro ao cadastrar treinador:", error);
       alert("Erro ao cadastrar treinador.");
@@ -141,6 +157,15 @@ const Gerente_Painel_CT = () => {
           />
           <button type="submit">Cadastrar Treinador</button>
         </form>
+      </div>
+
+      <div className="form-section">
+        <h2>Treinadores Associados</h2>
+        <ul>
+          {treinadores.map((treinador) => (
+            <li key={treinador.id}>{treinador.username} - {treinador.email}</li>
+          ))}
+        </ul>
       </div>
 
       <div className="form-section">
