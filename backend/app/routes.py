@@ -323,6 +323,7 @@ def register_treinador():
     # Associar o treinador ao CT
     if treinador not in ct.treinadores:
         ct.treinadores.append(treinador)
+        treinador.cts.append(ct)
         db.session.commit()
 
     return jsonify({'message': 'Treinador registrado e associado ao CT com sucesso'}), 201

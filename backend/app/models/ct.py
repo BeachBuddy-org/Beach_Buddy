@@ -22,3 +22,15 @@ class CT(db.Model):
     def __str__(self):
         return (f'CT(id={self.id}, name={self.name}, cnpj={self.cnpj}, '
                 f'address={self.address}')
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'cnpj': self.cnpj,
+            'address': self.address,
+            'gerentes': [gerente for gerente in self.gerentes],
+            'alunos': [aluno for aluno in self.alunos],
+            'treinadores': [treinador for treinador in self.treinadores],
+            'treinos': [treino for treino in self.treinos],
+        }
